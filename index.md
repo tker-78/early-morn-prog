@@ -29,6 +29,8 @@
           </aside>
         </section>
 
+        {% post_url 2022-07-25-sample %}
+
         <section class="profile-content" id="content">
           <!-- TODO header? -->
 
