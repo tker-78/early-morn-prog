@@ -29,7 +29,7 @@
           </aside>
         </section>
 
-        {% post_url _posts/2022-07-25-sample-text %}
+        {% link _posts/2022-07-25-sample-text %}
 
         <section class="profile-content" id="content">
           <!-- TODO header? -->
