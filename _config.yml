@@ -1,5 +1,3 @@
 theme: jekyll-theme-minimal
 
 baseurl: early-morn-prog
-
-permalink: "early-morn-prog/_posts/:year-:month-:day-:title.md"
