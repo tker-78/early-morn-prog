@@ -2,4 +2,4 @@ theme: jekyll-theme-minimal
 
 baseurl: early-morn-prog
 
-permalink: "/_posts/:year/:month/:day/:title.md"
+permalink: "/_posts/:year-:month-:day-:title.md"
