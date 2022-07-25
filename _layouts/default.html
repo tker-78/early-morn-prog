@@ -49,13 +49,16 @@
               </ul>
             </nav>
 
+
+            {% for post in site.posts %}
             <div id="githubpages" class="menu-category">
               <h3 class="menu-category-name">GitHub Pages</h3>
               <ol class="menu-category-list has-images">
               <li class="menu-item">
                 <div class="menu-item-info">
-                  <h4 class="menu-item-name">sample file</h4>
-                  {{ content }}
+                  <h4 class="menu-item-name">{{ post.title }}</h4>
+                  <a href="{{ post.url }}">{{ post.title }}</a>
+
                   <p class="menu-item-description">Standalone Android widget for picking a single date from a calendar view.</p>
                 </div>
               </li>
@@ -198,6 +201,7 @@
               </li>
               </ol>
             </div>
+            {% endfor %}
           </article>
 
           <section class="profile-modules" id="modules">
