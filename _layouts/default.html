@@ -21,15 +21,15 @@
         <section class="profile-masthead" id="masthead">
           <header class="profile-logo">
             <div class="profile-logo-image">
-              <img alt="Square Open Source " src="https://tker-78.github.io/early-morn-prog/images/logo.png" />
+              <img alt="early-morn-prog" src="https://tker-78.github.io/early-morn-prog/images/logo.png" />
             </div>
             <div class="profile-name">
-              <h1>Square Open Source</h1>
+              <h1>Early Morning Programmer</h1>
             </div>
           </header>
           <aside class="profile-summary">
             <div class="summary-location summary-module">
-              <a href="http://github.com/square">github.com/square</a>
+              <a href="http://github.com/tker-78">github.com/tker-78</a>
             </div>
           </aside>
         </section>
@@ -38,39 +38,27 @@
         <section class="profile-content" id="content">
           <!-- TODO header? -->
           <div class="profile-description">
-            <p>As a company built on open source, here are some of the internally-developed libraries we have contributed back to the community.</p>
+            <p>カテゴリ一覧</p>
           </div>
 
           <article class="profile-menu" id="menu">
             <nav class="menu-navigation">
               <ul class="menu-navigation-list">
-                <li class="menu-navigation-list-item"><a href="#android">Android</a></li>
+                <li class="menu-navigation-list-item"><a href="#githubpages">GitHubPages</a></li>
                 <li class="menu-navigation-list-item"><a href="#c">C</a></li>
-                <li class="menu-navigation-list-item"><a href="#go">Go</a></li>
-                <li class="menu-navigation-list-item"><a href="#ios">iOS</a></li>
-                <li class="menu-navigation-list-item"><a href="#java">Java</a></li>
-                <li class="menu-navigation-list-item"><a href="#javascript">JavaScript</a></li>
-                <li class="menu-navigation-list-item"><a href="#kotlin">Kotlin</a></li>
-                <li class="menu-navigation-list-item"><a href="#ruby">Ruby</a></li>
-                <li class="menu-navigation-list-item"><a href="#other">Other</a></li>
               </ul>
             </nav>
 
-            <div id="android" class="menu-category">
-              <h3 class="menu-category-name">Android</h3>
+            <div id="githubpages" class="menu-category">
+              <h3 class="menu-category-name">GitHub Pages</h3>
               <ol class="menu-category-list has-images">
               <li class="menu-item">
                 <div class="menu-item-info">
                   <h4 class="menu-item-name">sample file</h4>
-                  
-
                   {{ content }}
-
-                  
-                  <span class="menu-item-price"><a href="/content/sample.md" target="_blank">Link</a></span>
+                  {{ posts.count }}
                   <p class="menu-item-description">Standalone Android widget for picking a single date from a calendar view.</p>
                 </div>
-
               </li>
               <li class="menu-item">
                 <div class="menu-item-info">
