@@ -48,14 +48,12 @@
               </ul>
             </nav>
 
-            {{ content }}
-
-
 
             <div id="githubpages" class="menu-category">
               <h3 class="menu-category-name">GitHub Pages</h3>
               <ol class="menu-category-list has-images">
-              <li class="menu-item">
+
+              <!-- <li class="menu-item">
                 <div class="menu-item-info">
                   <h4 class="menu-item-name">title</h4>
                   <span class="menu-item-price"><a href="2022/07/25/sampletext.html" target="_blank">link</a></span>
@@ -64,7 +62,7 @@
                 <div class="menu-item-image has-meta-content">
                   <img src="{{ "/images/image1.jpg" | absolute_url }}" />
                 </div>
-              </li>
+              </li> -->
 
               {% for post in site.posts %} 
                 {% include githubpages.html %}
