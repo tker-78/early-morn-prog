@@ -5,6 +5,6 @@
     <p class="menu-item-description"> {{ post.description }}</p>
   </div>
   <div class="menu-item-image has-meta-content">
-    <img src="{{ "/images/image1.jpg" | absolute_url }}" />
+    <img src="{{post.basename}}/{{ "/images/image1.jpg" | absolute_url }}" />
   </div>
 </li>

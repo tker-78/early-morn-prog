@@ -64,8 +64,8 @@
                 </div>
               </li> -->
 
-              {% for post in site.categories.githubpages %} 
-                {% include githubpages.html %}
+              {% for post in site.posts %} 
+                {% include display_posts.html %}
               {% endfor %}
               </ol>
             </div>
