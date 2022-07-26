@@ -1,6 +1,6 @@
 theme: jekyll-theme-minimal
 
-baseurl: early-morn-prog
+baseurl: "https://tker-78.github.io/early-morn-prog"
 
 title: Early Morning Programmer
 # permalink: "early-morn-prog/:year-:month-:day-:title.md"
