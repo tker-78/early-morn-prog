@@ -65,10 +65,11 @@
                   <img src="{{ "/images/image1.jpg" | absolute_url }}" />
                 </div>
               </li>
-              </ol>
 
-              
-              {% include githubpages.html %}
+              {% for post in site.posts %} 
+                {% include githubpages.html %}
+              {% endfor %}
+              </ol>
             </div>
           </article>
 
