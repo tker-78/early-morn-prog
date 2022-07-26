@@ -1,6 +1,7 @@
 ---
 title: "sample text"
 description: "this is a sample text"
+dirname: 2022-07-25-sampletext
 ---
 
 # sample markdown text
