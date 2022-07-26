@@ -1,6 +1,6 @@
 ---
-title: Top Page Layout
-description: トップページのレイアウト作成
+title: "Top Page Layout"
+description: "トップページのレイアウト作成"
 
 ---
 
