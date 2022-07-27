@@ -12,15 +12,15 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="トップページのレイアウト作成" />
 <meta property="og:description" content="トップページのレイアウト作成" />
-<link rel="canonical" href="http://localhost:4000/early-morn-prog/2022/07/26/toppagelayout.html" />
-<meta property="og:url" content="http://localhost:4000/early-morn-prog/2022/07/26/toppagelayout.html" />
+<link rel="canonical" href="http://localhost:4000/early-morn-prog/githubpages/2022/07/26/toppagelayout.html" />
+<meta property="og:url" content="http://localhost:4000/early-morn-prog/githubpages/2022/07/26/toppagelayout.html" />
 <meta property="og:site_name" content="Early Morning Programmer" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2022-07-26T00:00:00+09:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Top Page Layout" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-07-26T00:00:00+09:00","datePublished":"2022-07-26T00:00:00+09:00","description":"トップページのレイアウト作成","headline":"Top Page Layout","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/early-morn-prog/2022/07/26/toppagelayout.html"},"url":"http://localhost:4000/early-morn-prog/2022/07/26/toppagelayout.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-07-26T00:00:00+09:00","datePublished":"2022-07-26T00:00:00+09:00","description":"トップページのレイアウト作成","headline":"Top Page Layout","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/early-morn-prog/githubpages/2022/07/26/toppagelayout.html"},"url":"http://localhost:4000/early-morn-prog/githubpages/2022/07/26/toppagelayout.html"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link rel="stylesheet" href="/early-morn-prog/assets/css/style.css?v=fd4741d1584f050be398325cb385f91f7388347c">
@@ -66,40 +66,21 @@
       <section>
       
       <h1 id="トップページレイアウトの作成">トップページレイアウトの作成</h1>
-<p>GitHub Pagesで運用するブログのトップページの作り込みの記録.<br />
-こんな感じのトップページにしたい. 
-<img src="image1.png" alt="" /></p>
+<p>GitHub Pagesで運用するブログのトップページの作り込みの記録.</p>
 
 <p><code class="language-plaintext highlighter-rouge">_posts</code>ディレクトリにブログ記事を投稿すると、topページのスクエアの部分にサムネイル画像とタイトルと要旨が表示されるようにしたい.<br />
 ブログ投稿のたびにtopページのHTMLファイルを修正していたらとても面倒なので、投稿と同時に自動表示してくれるようにしたい.</p>
 
 <h2 id="投稿を自動反映">投稿を自動反映</h2>
 <p><code class="language-plaintext highlighter-rouge">site.posts</code>で全ての投稿を抽出できるので、下記の書き方で自動反映できる.</p>
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-  &lt;li&gt;
-	/2022/07/27/top.html
-	top
-	top of top
-  &lt;/li&gt;
 
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">post</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">site.posts</span><span class="w"> </span><span class="p">%}</span>
   &lt;li&gt;
-	/2022/07/26/toppagelayout.html
-	Top Page Layout
-	トップページのレイアウト作成
+	<span class="p">{{</span><span class="w"> </span><span class="nv">post</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">}}</span>
+	<span class="p">{{</span><span class="w"> </span><span class="nv">post</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>
+	<span class="p">{{</span><span class="w"> </span><span class="nv">post</span><span class="p">.</span><span class="nv">description</span><span class="p">}}</span>
   &lt;/li&gt;
-
-  &lt;li&gt;
-	/2022/07/26/mod.html
-	sample text2
-	this is a sample text2
-  &lt;/li&gt;
-
-  &lt;li&gt;
-	/githubpages/2022/07/25/sampletext.html
-	sample text
-	this is a sample text
-  &lt;/li&gt;
-
+<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
 </code></pre></div></div>
 
 <p>と思ったら、リンクが、<code class="language-plaintext highlighter-rouge">https://tker-78.github.io/2022/07/25/sample-text.html</code>と変換されていてアクセスできない.<br />
@@ -128,18 +109,18 @@
     <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"menu-item-description"</span><span class="nt">&gt;</span> top of top<span class="nt">&lt;/p&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"menu-item-image has-meta-content"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"https://tker-78.github.io/early-morn-prog/images/posts///image1.jpg"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"https://tker-78.github.io/early-morn-prog/images//image1.png"</span> <span class="nt">/&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/li&gt;</span>
  
   <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"menu-item"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"menu-item-info"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">"menu-item-name"</span><span class="nt">&gt;</span>Top Page Layout<span class="nt">&lt;/h4&gt;</span>
-    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"menu-item-price"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"http://localhost:4000/early-morn-prog/2022/07/26/toppagelayout.html"</span> <span class="na">target=</span><span class="s">"_blank"</span><span class="nt">&gt;</span>link<span class="nt">&lt;/a&gt;&lt;/span&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"menu-item-price"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"http://localhost:4000/early-morn-prog/githubpages/2022/07/26/toppagelayout.html"</span> <span class="na">target=</span><span class="s">"_blank"</span><span class="nt">&gt;</span>link<span class="nt">&lt;/a&gt;&lt;/span&gt;</span>
     <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"menu-item-description"</span><span class="nt">&gt;</span> トップページのレイアウト作成<span class="nt">&lt;/p&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"menu-item-image has-meta-content"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"https://tker-78.github.io/early-morn-prog/images/posts///image1.jpg"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"https://tker-78.github.io/early-morn-prog/images/2022-07-26-toppage_layout/image1.png"</span> <span class="nt">/&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/li&gt;</span>
  
@@ -150,7 +131,7 @@
     <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"menu-item-description"</span><span class="nt">&gt;</span> this is a sample text2<span class="nt">&lt;/p&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"menu-item-image has-meta-content"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"https://tker-78.github.io/early-morn-prog/images/posts///image1.jpg"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"https://tker-78.github.io/early-morn-prog/images//image1.png"</span> <span class="nt">/&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/li&gt;</span>
  
@@ -161,15 +142,12 @@
     <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"menu-item-description"</span><span class="nt">&gt;</span> this is a sample text<span class="nt">&lt;/p&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"menu-item-image has-meta-content"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"https://tker-78.github.io/early-morn-prog/images/posts//2022-07-25-sampletext/image1.jpg"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"https://tker-78.github.io/early-morn-prog/images/2022-07-25-sampletext/image1.png"</span> <span class="nt">/&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/li&gt;</span>
 
 </code></pre></div></div>
 <p>こんな感じで、``を指定している.</p>
-
-<h3 id="サムネイル画像の指定">サムネイル画像の指定</h3>
-<p>トップページに表示するサムネイル画像を指定する.</p>
 
 <h3 id="リンクの指定方法">リンクの指定方法</h3>
 <h4 id="aタグの場合">aタグの場合</h4>
