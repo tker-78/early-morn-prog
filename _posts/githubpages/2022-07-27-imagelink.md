@@ -12,9 +12,12 @@ category: githubpages
 通常、画像のリンクは、`![](相対パス)`で記述するが、Jekyllの場合は`![](絶対パス)`となる.  
 
 しかし、いちいち`![](http://tker-78.github.io/early-morn-prog/images/…)`と記述していたら手間がかかってしょうがないので、
+
+{% raw %}
 ```markdown
 ![]({{site.url}}/{{site.baseurl}}/imageパス)
 ```
+{% endraw %}
 
 の記述に簡略化する.  
 
