@@ -37,6 +37,7 @@ GitHub Pagesで運用するブログのトップページの作り込みの記�
 解消方法は下記の`リンクの指定方法`を参照.  
 
 ### パーシャルを指定する
+{% raw %}
 `_includes/partial.html`
 ```html
 <li class="menu-item">
@@ -60,6 +61,7 @@ GitHub Pagesで運用するブログのトップページの作り込みの記�
 ```
 こんな感じで、`{{ post.title }}`を指定している.  
 
+{% endraw %}
 
 ### リンクの指定方法
 #### aタグの場合
