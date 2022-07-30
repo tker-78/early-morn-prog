@@ -14,7 +14,7 @@ category: githubpages
 _includes/desplay_posts.html
 ```html
 <div class="menu-item-image has-meta-content">
-  <img src="{{post.category}}.png" />
+  <img src="{{post.categories[0] }}.png" />
 </div>
 
 ```
