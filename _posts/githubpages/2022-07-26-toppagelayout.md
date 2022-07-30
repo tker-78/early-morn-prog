@@ -52,14 +52,24 @@ GitHub Pagesで運用するブログのトップページの作り込みの記�
 </li>
 ```
 
+{% endraw %}
 
-`_layouts/default.html`
+
+### カテゴリ毎のポストの表示設定
+{% raw %}
 ```html
-{% for post in site.posts %} 
-  {% include display_posts.html %}
-{% endfor %}
+<div id="githubpages" class="menu-category">
+  <h3 class="menu-category-name">GitHub Pages</h3>
+  <ol class="menu-category-list has-images">
+
+  {% for post in site.categories.githubpages %} 
+    {% include partial.html %}
+  {% endfor %}
+  </ol>
+</div>
 ```
-こんな感じで、`{{ post.title }}`を指定している.  
+
+`site.categories.<カテゴリ名>`で指定のカテゴリのポストのみを取り出すことができる.  
 
 {% endraw %}
 

@@ -102,12 +102,20 @@
 <span class="nt">&lt;/li&gt;</span>
 </code></pre></div></div>
 
-<p><code class="language-plaintext highlighter-rouge">_layouts/default.html</code></p>
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% for post in site.posts %} 
-  {% include display_posts.html %}
-{% endfor %}
+<h3 id="カテゴリ毎のポストの表示設定">カテゴリ毎のポストの表示設定</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"githubpages"</span> <span class="na">class=</span><span class="s">"menu-category"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;h3</span> <span class="na">class=</span><span class="s">"menu-category-name"</span><span class="nt">&gt;</span>GitHub Pages<span class="nt">&lt;/h3&gt;</span>
+  <span class="nt">&lt;ol</span> <span class="na">class=</span><span class="s">"menu-category-list has-images"</span><span class="nt">&gt;</span>
+
+  {% for post in site.categories.githubpages %} 
+    {% include partial.html %}
+  {% endfor %}
+  <span class="nt">&lt;/ol&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
 </code></pre></div></div>
-<p>こんな感じで、<code class="language-plaintext highlighter-rouge">{{ post.title }}</code>を指定している.</p>
+
+<p><code class="language-plaintext highlighter-rouge">site.categories.&lt;カテゴリ名&gt;</code>で指定のカテゴリのポストのみを取り出すことができる.</p>
 
 <h3 id="リンクの指定方法">リンクの指定方法</h3>
 <h4 id="aタグの場合">aタグの場合</h4>
