@@ -9,5 +9,3 @@ plugins:
   - jekyll-sitemap
 
 timezone: Japan
-
-logo: :baseurl/images/logo.png
