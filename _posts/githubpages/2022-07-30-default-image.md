@@ -7,8 +7,7 @@ category: githubpages
 
 # {{ page.description }}
 
-ポストに紐づく画像が指定されている場合はその画像を、指定されていない場合は、カテゴリ毎のデフォルトの画像を表示する設定を行う.  
-
+ポストのカテゴリに紐づくサムネイル画像を自動表示する.  
 
 
 {% raw %}
@@ -17,7 +16,6 @@ _includes/desplay_posts.html
 <div class="menu-item-image has-meta-content">
   <img src="{{post.category}}.png" />
 </div>
-
 
 ```
 
