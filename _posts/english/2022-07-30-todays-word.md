@@ -1,8 +1,8 @@
-——-
+---
 title: “今日の単語 2022/07/30”
 category: english
 description: “2022/07/30に学習した単語”
-———
+---
 
 
 ## {{ page.title }}
