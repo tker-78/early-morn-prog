@@ -1,7 +1,7 @@
 ---
-title: "今日の単語 2022/07/28"
+title: 今日の単語 
 category: english  
-description: "2022/07/28に学習した単語"
+description: 2022/07/28に学習した単語
 ---
 
 ## {{ page.title }}

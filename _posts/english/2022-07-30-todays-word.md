@@ -1,5 +1,5 @@
 ---
-title: 今日の単語 2022/07/30
+title: 今日の単語 
 category: english
 description: 2022/07/30に学習した単語
 ---
