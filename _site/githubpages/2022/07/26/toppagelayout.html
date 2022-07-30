@@ -23,7 +23,7 @@
 {"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-07-26T00:00:00+09:00","datePublished":"2022-07-26T00:00:00+09:00","description":"トップページのレイアウト作成","headline":"Top Page Layout","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/early-morn-prog/githubpages/2022/07/26/toppagelayout.html"},"url":"http://localhost:4000/early-morn-prog/githubpages/2022/07/26/toppagelayout.html"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/early-morn-prog/assets/css/style.css?v=fd4741d1584f050be398325cb385f91f7388347c">
+    <link rel="stylesheet" href="/early-morn-prog/assets/css/style.css?v=5ef061554342827d5b89186d30745d1cd7db5b15">
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
@@ -123,8 +123,10 @@
 
 <h4 id="画像の場合">画像の場合</h4>
 <p>画像は絶対パスで参照されるので、<code class="language-plaintext highlighter-rouge">Liquid</code>を使用して<code class="language-plaintext highlighter-rouge">imgタグ</code>内に</p>
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"http://localhost:4000/early-morn-prog/images/image1.png"</span> <span class="nt">/&gt;</span>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"{{ "</span><span class="err">/</span><span class="na">images</span><span class="err">/</span><span class="na">image1.png</span><span class="err">"</span> <span class="err">|</span> <span class="na">absolute_url</span> <span class="err">}}"</span> <span class="nt">/&gt;</span>
 </code></pre></div></div>
+
 <p>のように指定する.</p>
 
 <p>_config.ymlで、</p>

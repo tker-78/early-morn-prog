@@ -79,9 +79,11 @@ GitHub Pagesで運用するブログのトップページの作り込みの記�
 
 #### 画像の場合
 画像は絶対パスで参照されるので、`Liquid`を使用して`imgタグ`内に
+{% raw %}
 ```html
 <img src="{{ "/images/image1.png" | absolute_url }}" />
 ```
+{% endraw %}
 のように指定する.  
 
 _config.ymlで、
