@@ -214,15 +214,15 @@ footer { width: 270px; float: left; position: fixed; bottom: 50px; -webkit-font-
   .downloads { width: 99%; }
   .downloads li, .downloads li + li + li { width: 33%; } }
 @media print { body { padding: 0.4in; font-size: 12pt; color: #444; } }
-h2 { color: darkblue; }
+h2 { color: darkslategrey; }
 
-h3 { color: darkblue; }
+h3 { color: darkslategrey; }
 
-h2::before { font-family: "Font Awesome 5 Free"; content: "\f6fc"; color: darkblue; }
+h2::before { font-family: "Font Awesome 5 Free"; content: "\f101"; color: darkslategrey; }
 
-h3::before { font-family: "Font Awesome 5 Free"; content: "\f6f0"; font-weight: 300; color: darkblue; }
+h3::before { font-family: "Font Awesome 5 Free"; content: "\f105"; font-weight: 300; color: darkslategrey; }
 
-#toc { border-top: solid 1px grey; border-right: solid 1px grey; border-left: solid 1px grey; border-bottom: solid 1px grey; border-radius: 5px; padding-top: 15px; padding-bottom: 15px; margin-top: 15px; margin-bottom: 30px; }
+#toc { border-top: solid 1px grey; border-right: solid 1px grey; border-left: solid 1px grey; border-bottom: solid 1px grey; border-radius: 5px; padding-top: 15px; margin-top: 15px; margin-bottom: 30px; }
 
 .inline-toc { color: black; }
-.inline-toc a { color: lightgreen; }
+.inline-toc a { color: #44dd44; }

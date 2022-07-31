@@ -4,24 +4,24 @@
 @import "{{site.theme}}";
 
 h2 {
-  color: darkblue;
+  color: darkslategrey;
 }
 
 h3 {
-  color: darkblue;
+  color: darkslategrey;
 }
 
 h2::before {
     font-family: "Font Awesome 5 Free";
-    content: "\f6fc"; //mountain
-    color: darkblue;
+    content: "\f101"; //angle-double-right
+    color: darkslategrey;
 }
 
 h3::before {
   font-family: "Font Awesome 5 Free";
-  content: "\f6f0"; //horse
+  content: "\f105"; //angle-right
   font-weight: 300;
-  color: darkblue;
+  color: darkslategrey;
 }
 
 #toc {
@@ -31,7 +31,6 @@ h3::before {
   border-bottom: solid 1px grey;
   border-radius: 5px;
   padding-top: 15px;
-  padding-bottom: 15px;
   margin-top: 15px;
   margin-bottom: 30px; 
 }
@@ -39,6 +38,6 @@ h3::before {
 .inline-toc {
   color: black;
     a {
-      color: lightgreen;
+      color: #44dd44;
     }
 }
