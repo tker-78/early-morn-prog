@@ -23,3 +23,22 @@ h3::before {
   font-weight: 300;
   color: darkblue;
 }
+
+#toc {
+  border-top: solid 1px grey;
+  border-right: solid 1px grey;
+  border-left: solid 1px grey;
+  border-bottom: solid 1px grey;
+  border-radius: 5px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-top: 15px;
+  margin-bottom: 30px; 
+}
+
+.inline-toc {
+  color: black;
+    a {
+      color: lightgreen;
+    }
+}
