@@ -2,6 +2,7 @@
 title: "ブログページに画像のリンクを貼る"
 description: "ブログのポストにはMarkdown形式を使用しているが、Markdownの画像リンクの貼り方ではまったので、記録しておく. "
 category: githubpages
+comment: true
 ---
 
 

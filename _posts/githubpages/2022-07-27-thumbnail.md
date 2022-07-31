@@ -3,7 +3,7 @@ title : "トップページに投稿のサムネイルを表示する"
 description: "各記事へのリンク先にサムネイル画像を自動的に表示する方法"
 category: githubpages
 dirname: 2022-07-27-thumbnail
-
+comment: true
 ---
 
 
