@@ -21,8 +21,8 @@
   <body>
     <div class="wrapper">
       <header>
-        <!--
-        <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1> -->
+        <h1 style="color:darkslategrey;"">{{ page.title }}</h1> 
+        <p><a href="{{ "/" | absolute_url }}" style="color:darkslategrey;">Home</a></p>
         
 
         {% if site.logo %}
@@ -45,12 +45,27 @@
         </ul>
         {% endif %} -->
 
+
+
         
 
       </header>
       <section>
-      {% include toc.html html=content id="toc" class="inline-toc" ordered=true h_max=3 h_min=2 %}
+      <div>
+        <span style="font-size:1.4em; color:black;">Contents</span>
+        {% include toc.html html=content id="toc" class="inline-toc" ordered=true h_max=3 h_min=2 %}
+      </div>
       {{ content }}
+
+      <br>
+      <br>
+
+      <div class="disqus">
+        <!-- DISQUSの導入  -->
+        {% if page.comment %}
+          {% include disqus.html %}
+        {% endif %}
+      </div>
 
       </section>
       <footer>

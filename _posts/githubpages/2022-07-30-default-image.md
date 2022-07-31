@@ -5,8 +5,6 @@ category: githubpages
 ---
 
 
-# {{ page.description }}
-
 ポストのカテゴリに紐づくサムネイル画像を自動表示する.  
 
 

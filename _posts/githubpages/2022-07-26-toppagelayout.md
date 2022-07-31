@@ -1,12 +1,11 @@
 ---
-title: "Top Page Layout"
+title: トップページレイアウトの作成
 description: "トップページのレイアウト作成"
 category: githubpages
 dirname: 2022-07-26-toppage_layout
 ---
 
 
-# トップページレイアウトの作成
 GitHub Pagesで運用するブログのトップページの作り込みの記録. 
 ![]({{site.url}}/{{site.baseurl}}/images/posts/githubpages/2022-07-26-toppage_layout/image1.png)
 

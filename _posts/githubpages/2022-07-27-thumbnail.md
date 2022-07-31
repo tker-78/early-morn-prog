@@ -7,7 +7,6 @@ dirname: 2022-07-27-thumbnail
 ---
 
 
-# トップページに画像のポストのサムネイル画像を表示する
 
 ```html
   <img src="http://tker-78.github.io/early-morn-prog/images/posts/{{ post.category}}/{{ post.dirname}}/image1.png" />
