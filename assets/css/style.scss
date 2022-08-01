@@ -15,6 +15,7 @@ h2::before {
     font-family: "Font Awesome 5 Free";
     content: "\f101"; //angle-double-right
     color: darkslategrey;
+    margin-right: 10px;
 }
 
 h3::before {
@@ -22,6 +23,7 @@ h3::before {
   content: "\f105"; //angle-right
   font-weight: 300;
   color: darkslategrey;
+  margin-right: 8px;
 }
 
 #toc {
