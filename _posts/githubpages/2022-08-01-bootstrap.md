@@ -3,6 +3,7 @@ title: bootstrapの導入
 layout: post
 category: githubpages
 comment: true
+thumbnail: true
 ---
 
 ## bootstrapのバージョン
