@@ -4,10 +4,12 @@
 @import "{{site.theme}}";
 
 h2 {
+  font-size: 1.6em;
   color: darkslategrey;
 }
 
 h3 {
+  font-size: 1.2em;
   color: darkslategrey;
 }
 
@@ -45,5 +47,11 @@ h3::before {
     }
 }
 
-.disqus {
+
+header {
+  margin-top: 30px;
+}
+
+section {
+  margin-top: 30px;
 }

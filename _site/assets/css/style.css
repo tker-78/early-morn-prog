@@ -214,9 +214,9 @@ footer { width: 270px; float: left; position: fixed; bottom: 50px; -webkit-font-
   .downloads { width: 99%; }
   .downloads li, .downloads li + li + li { width: 33%; } }
 @media print { body { padding: 0.4in; font-size: 12pt; color: #444; } }
-h2 { color: darkslategrey; }
+h2 { font-size: 1.6em; color: darkslategrey; }
 
-h3 { color: darkslategrey; }
+h3 { font-size: 1.2em; color: darkslategrey; }
 
 h2::before { font-family: "Font Awesome 5 Free"; content: "\f101"; color: darkslategrey; margin-right: 10px; }
 
@@ -226,3 +226,7 @@ h3::before { font-family: "Font Awesome 5 Free"; content: "\f105"; font-weight: 
 
 .inline-toc { color: black; padding-bottom: 15px; }
 .inline-toc a { color: #44dd44; }
+
+header { margin-top: 30px; }
+
+section { margin-top: 30px; }
