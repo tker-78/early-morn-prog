@@ -2,7 +2,7 @@
 title: プライバシーポリシー
 permalink: /policy
 comment: false
-layout: policy 
+layout: policy_contact
 ---
 当ブログにおける個人情報の取り扱いについて、以下の通りにプライバシーポリシーを定めます.  
 
