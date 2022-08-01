@@ -1,7 +1,12 @@
 <li class="menu-item">
   <div class="menu-item-info">
     <h4 class="menu-item-name"><a href="{{ post.url | absolute_url }}" target="_blank" style="color:black;">{{ post.title }}</a></h4>
-    <h5 class="menu-item-name" style="color:gray;">posted : {{ post.date | date_to_string }}</h5>
+    <h5 class="menu-item-name" style="color:gray;">
+      <i class="fas fa-calendar"></i>
+        <span style="margin-left: 4px;">
+          {{ post.date | date_to_string }}
+        </span> 
+    </h5>
 
     <br>
     <br>

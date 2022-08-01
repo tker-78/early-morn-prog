@@ -222,7 +222,7 @@ h2::before { font-family: "Font Awesome 5 Free"; content: "\f101"; color: darksl
 
 h3::before { font-family: "Font Awesome 5 Free"; content: "\f105"; font-weight: 300; color: darkslategrey; margin-right: 8px; }
 
-#toc { border-top: solid 1px grey; border-right: solid 1px grey; border-left: solid 1px grey; border-bottom: solid 1px grey; border-radius: 5px; padding-top: 15px; margin-bottom: 30px; }
+#toc { border-top: solid 1px grey; border-right: solid 1px grey; border-left: solid 1px grey; border-bottom: solid 1px grey; border-radius: 5px; padding-top: 15px; margin-top: 10px; margin-bottom: 30px; }
 
 .inline-toc { color: black; padding-bottom: 15px; }
 .inline-toc a { color: #44dd44; }
