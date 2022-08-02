@@ -16,10 +16,10 @@ thumbnail: true
 [ezgif](https://ezgif.com/split)を使用してGIFアニメーションを作成する.  
 
 Pagesを使用して表示したいテキストを拡大表示する.  
-![](/images/posts/githubpages/2022-08-03-gif-character/image1.png)
+![]({{ "/images/posts/githubpages/2022-08-03-gif-character/image1.png" | relative_url }})
 
 これを数ポイント(任意)ずつ横にずらしていき、10枚ほど画像ファイルとして保存する.  
-![](/images/posts/githubpages/2022-08-03-gif-character/image2.png)
+![]({{ "/images/posts/githubpages/2022-08-03-gif-character/image2.png" | relative_url }})
 
 
 ## 画像をASCII文字に変換する
