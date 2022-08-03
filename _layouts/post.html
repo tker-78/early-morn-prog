@@ -28,11 +28,8 @@
     <div class="wrapper">
       <header>
         <h1 style="color:darkslategrey;"">{{ page.title }}</h1> 
-        <p>
-          <a href="{{ "/" | absolute_url }}" style="color:darkslategrey;">
-            <i class="fa-solid fa-house"></i><span style="margin-left: 2px;">Home</span>
-          </a>
-        </p>
+
+        {% include breadcrumbs.html %}
         
 
         {% if site.logo %}
