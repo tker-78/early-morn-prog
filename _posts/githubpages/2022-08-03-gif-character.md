@@ -88,7 +88,7 @@ $ asciinema upload [filename]
 このように動くタイトル文字が完成.  
 
 ページを開いた時またはリロード時に自動再生したい場合は、
-`<script>`に`date-autoplay="true"`を追記する.  
+`<script>`に`data-autoplay="true"`を追記する.  
 
 
 
