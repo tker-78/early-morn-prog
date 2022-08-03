@@ -12,15 +12,12 @@ thumbnail: true
 ## 完成形
 <script id="asciicast-EgwFgg9BGqbBWwKytRJ0WKNHE" src="https://asciinema.org/a/EgwFgg9BGqbBWwKytRJ0WKNHE.js" async data-autoplay="true" data-size="big" autoplay="true" ></script>
 
-## GIFイメージを作成する
-
-[ezgif](https://ezgif.com/split)を使用してGIFアニメーションを作成する.  
+## GIFイメージを作成する 
 
 Pagesを使用して表示したいテキストを拡大表示する.  
 ![]({{ "/images/posts/githubpages/2022-08-03-gif-character/image1.png" | relative_url }})
 
-これを数ポイント(任意)ずつ横にずらしていき、10枚ほど画像ファイルとして保存する.  
-![]({{ "/images/posts/githubpages/2022-08-03-gif-character/image2.png" | relative_url }})
+これを数ポイント(任意)ずつ横にずらしていき、10枚ほど画像ファイルとして保存する.   
 
 
 ## 画像をASCII文字に変換する
