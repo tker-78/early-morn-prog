@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     
 
-    <link rel="stylesheet" href="/early-morn-prog/assets/css/style.css?v=b70539232785448ef76b7489c6b223e5d67d85c9">
+    <link rel="stylesheet" href="/early-morn-prog/assets/css/style.css?v=7bc53df3e2e20b9ed6894a6ac556dd5c325d6cd6">
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
@@ -119,7 +119,7 @@
         
 
         <!-- <span style="font-size:1.4em; color:black;">Contents</span> -->
-        <ol class="inline-toc" id="toc"><li><a href="#gifイメージを作成する">GIFイメージを作成する</a></li><li><a href="#画像をascii文字に変換する">画像をASCII文字に変換する</a></li></ol>
+        <ol class="inline-toc" id="toc"><li><a href="#gifイメージを作成する">GIFイメージを作成する</a></li><li><a href="#画像をascii文字に変換する">画像をASCII文字に変換する</a></li><li><a href="#コマンドラインで文字を表示する">コマンドラインで文字を表示する</a></li><li><a href="#cliのレコーディングを行う">CLIのレコーディングを行う</a><ol><li><a href="#asciinemaのインストール">asciinemaのインストール</a></li><li><a href="#asciinemaの実行">asciinemaの実行</a></li></ol></li></ol>
       </div>
       <p>ブログのタイトルがCLI上で表示できたらちょっとハッカーっぽくないか?<br />
 実装してみることにしたので、その方法を解説する.</p>
@@ -155,6 +155,46 @@
                                                ::                   .:.                             
 
 </code></pre></div></div>
+
+<h2 id="コマンドラインで文字を表示する">コマンドラインで文字を表示する</h2>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="o">..</span><span class="mi">6</span> <span class="k">do</span>
+  <span class="n">num</span> <span class="o">=</span> <span class="n">i</span><span class="p">.</span><span class="nf">to_s</span>
+  <span class="no">File</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="s2">"./gif</span><span class="si">#{</span><span class="n">num</span><span class="si">}</span><span class="s2">.txt"</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">f</span><span class="o">|</span>
+    <span class="nb">puts</span> <span class="n">f</span><span class="p">.</span><span class="nf">readlines</span>
+    <span class="nb">sleep</span> <span class="mf">0.5</span>
+    <span class="nb">system</span> <span class="s1">'clear'</span>
+  <span class="p">}</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<h2 id="cliのレコーディングを行う">CLIのレコーディングを行う</h2>
+<h3 id="asciinemaのインストール">asciinemaのインストール</h3>
+<p><code class="language-plaintext highlighter-rouge">asciinema</code>とは、CLIの内容をレコーディングしてくれるパッケージ.<br />
+homebrewで管理されているので、下記のコマンドでインストールする.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>brew <span class="nb">install </span>asciinema
+</code></pre></div></div>
+
+<h3 id="asciinemaの実行">asciinemaの実行</h3>
+<p>下記のコマンドでレコーディングを開始する.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>asciinema rec <span class="o">[</span>filename]
+</code></pre></div></div>
+
+<p>レコーディングが完了したら<code class="language-plaintext highlighter-rouge">ctrl+D</code>でレコーディングを停止する.</p>
+
+<p>レコーディングのアップロード</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>asciinema upload <span class="o">[</span>filename]
+</code></pre></div></div>
+
+<p>アップロード先のリンクが表示されるので、リンク先を確認して、shareボタンを押し、
+表示されている<code class="language-plaintext highlighter-rouge">Embed the player</code>のリンクを, <code class="language-plaintext highlighter-rouge">.js</code>, <code class="language-plaintext highlighter-rouge">.css</code>ファイルをソースファイルに貼り付ける.　　</p>
+
+<p><a href="https://asciinema.org/a/EgwFgg9BGqbBWwKytRJ0WKNHE"><img src="https://asciinema.org/a/EgwFgg9BGqbBWwKytRJ0WKNHE.svg" alt="asciicast" /></a></p>
+
+<p>このように動くタイトル文字が完成.</p>
+
+<p>ページを開いた時またはリロード時に自動再生したい場合は、
+<code class="language-plaintext highlighter-rouge">&lt;script&gt;</code>に<code class="language-plaintext highlighter-rouge">date-autoplay="true"</code>を追記する.</p>
 
 
 

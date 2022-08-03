@@ -43,6 +43,52 @@ Pagesを使用して表示したいテキストを拡大表示する.
 
 ```
 
+## コマンドラインで文字を表示する
+
+```ruby
+for i in 0..6 do
+  num = i.to_s
+  File.open("./gif#{num}.txt", "r") { |f|
+    puts f.readlines
+    sleep 0.5
+    system 'clear'
+  }
+end
+```
+
+## CLIのレコーディングを行う
+### asciinemaのインストール
+`asciinema`とは、CLIの内容をレコーディングしてくれるパッケージ.  
+homebrewで管理されているので、下記のコマンドでインストールする.  
+```bash
+$ brew install asciinema
+```
+
+### asciinemaの実行
+下記のコマンドでレコーディングを開始する.  
+```bash
+$ asciinema rec [filename]
+```
+
+レコーディングが完了したら`ctrl+D`でレコーディングを停止する.  
+
+レコーディングのアップロード
+```bash
+$ asciinema upload [filename]
+```
+
+アップロード先のリンクが表示されるので、リンク先を確認して、shareボタンを押し、
+表示されている`Embed the player`のリンクを, `.js`, `.css`ファイルをソースファイルに貼り付ける.　　
+
+[![asciicast](https://asciinema.org/a/EgwFgg9BGqbBWwKytRJ0WKNHE.svg)](https://asciinema.org/a/EgwFgg9BGqbBWwKytRJ0WKNHE)
+
+このように動くタイトル文字が完成.  
+
+ページを開いた時またはリロード時に自動再生したい場合は、
+`<script>`に`date-autoplay="true"`を追記する.  
+
+
+
 
 
 
