@@ -80,6 +80,8 @@ $ asciinema upload [filename]
 アップロード先のリンクが表示されるので、リンク先を確認して、shareボタンを押し、
 表示されている`Embed the player`のリンクを, `.js`, `.css`ファイルをソースファイルに貼り付ける.　　
 
+![]({{ "/images/posts/githubpages/2022-08-03-gif-character/image3.png" | relative_url }})
+
 [![asciicast](https://asciinema.org/a/EgwFgg9BGqbBWwKytRJ0WKNHE.svg)](https://asciinema.org/a/EgwFgg9BGqbBWwKytRJ0WKNHE)
 
 このように動くタイトル文字が完成.  
