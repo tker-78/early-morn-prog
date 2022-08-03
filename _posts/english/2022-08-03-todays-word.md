@@ -1,5 +1,5 @@
 ---
-tittle: 今日の単語
+title: 今日の単語
 category: english
 ---
 
