@@ -7,5 +7,6 @@ title: Early Morning Programmer
 
 plugins:
   - jekyll-sitemap
+  - jekyll-seo-tag
 
 timezone: Japan
