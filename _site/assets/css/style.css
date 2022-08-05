@@ -220,9 +220,13 @@ h2 { font-size: 1.6em; color: darkslategrey; }
 
 h3 { font-size: 1.2em; color: darkslategrey; }
 
+h4 { font-size: 1em; color: darkslategrey; }
+
 h2::before { font-family: "Font Awesome 5 Free"; content: "\f101"; color: darkslategrey; margin-right: 10px; }
 
 h3::before { font-family: "Font Awesome 5 Free"; content: "\f105"; font-weight: 300; color: darkslategrey; margin-right: 8px; }
+
+h4::before { font-family: "Font Awesome 5 Free"; content: "\f32b"; font-weight: 300; color: darkslategrey; margin-right: 8px; }
 
 #toc { border-top: solid 1px grey; border-right: solid 1px grey; border-left: solid 1px grey; border-bottom: solid 1px grey; border-radius: 5px; padding-top: 15px; margin-top: 10px; margin-bottom: 30px; }
 
