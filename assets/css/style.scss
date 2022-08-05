@@ -22,6 +22,11 @@ h4 {
   color: darkslategrey;
 }
 
+h5 {
+  font-size: 0.8em;
+  color: darkslategrey;
+}
+
 h2::before {
     font-family: "Font Awesome 5 Free";
     content: "\f101"; //angle-double-right
@@ -43,7 +48,14 @@ h4::before {
   font-weight: 300;
   color: darkslategrey;
   margin-right: 8px;
+}
 
+h5::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f105"; //angle-right
+  font-weight: 300;
+  color: darkslategrey;
+  margin-right: 8px;
 }
 
 #toc {
