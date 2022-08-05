@@ -3,7 +3,7 @@ theme: jekyll-theme-minimal
 url: https://www.early-morn-prog.org
 baseurl: /
 
-title: Early Morning Programmer
+title: 早朝プログラマ
 
 plugins:
   - jekyll-sitemap
