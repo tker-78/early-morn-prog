@@ -1,8 +1,8 @@
-—
+---
 title: 今日の単語
 category: english
 comment: true
-—
+---
 
 ### preliminary
 暫定の.  
