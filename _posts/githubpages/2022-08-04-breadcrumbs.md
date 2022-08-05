@@ -8,7 +8,7 @@ thumbnail: true
 ブログ記事の上部にパンくずリスト(現在ページのナビゲーション)を導入する.  
 
 ## ソースコード
-
+{% raw %}
 ```html
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
@@ -18,6 +18,7 @@ thumbnail: true
   </ol>
 </nav>
 ```
+{% endraw %}
 
 このようにパンくずリストが表示される.  
 ![]({{ "images/posts/githubpages/2022-08-04-breadcrumbs/image1.png" | relative_url }})
