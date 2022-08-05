@@ -75,3 +75,32 @@ comment: true
 
 ### receptionist
 受付  
+
+<!—以外追記—>
+
+### speculation
+推測、推量.  
+> speculation from industry experts.  
+> 業界の専門家の推測.  
+
+### solely
+一人で.  
+
+### canopy
+天蓋.  
+
+### forfeit
+没収される.  
+> forfeit the deposit.  
+> 保証金を剥奪される.  
+
+### itinerary
+旅程表.  
+
+### emerge
+振興の.  
+
+### adequate
+十分な.  
+> an adequate explanation.  
+> 十分な説明.  
