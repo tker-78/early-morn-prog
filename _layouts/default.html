@@ -71,6 +71,7 @@
               <ul class="menu-navigation-list">
                 <li class="menu-navigation-list-item"><a href="#githubpages">GitHubPages</a></li>
                 <li class="menu-navigation-list-item"><a href="#english">English</a></li>
+                <li class="menu-navigation-list-item"><a href="#ap">応用情報技術者試験</a></li>
               </ul>
             </nav>
 
@@ -96,6 +97,17 @@
               {% endfor %}
               </ol>
             </div>
+          
+            <div id="ap" class="menu-category">
+              <h3 class="menu-category-name">応用情報技術者試験</h3>
+              <ol class="menu-category-list has-images">
+
+              {% for post in site.categories.ap %} 
+                {% include display_posts.html %}
+              {% endfor %}
+              </ol>
+            </div>
+
           </article>
 
           
