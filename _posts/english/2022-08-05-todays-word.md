@@ -76,7 +76,6 @@ comment: true
 ### receptionist
 受付  
 
-<!—以外追記—>
 
 ### speculation
 推測、推量.  
