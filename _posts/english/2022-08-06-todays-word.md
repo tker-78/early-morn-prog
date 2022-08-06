@@ -1,8 +1,8 @@
-—
+---
 title: 今日の単語
 category: english
 comment: true
-—
+---
 
 ### ventilation
 風通し.  
