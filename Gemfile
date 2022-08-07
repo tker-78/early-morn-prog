@@ -12,6 +12,6 @@ gem 'nokogiri'
 group :jekyll_plugins do
   gem 'github-pages'
   gem 'jekyll-seo-tag'
-  gem 'liquid_reading_tag'
+  gem 'liquid_reading_time'
 end
 gem 'jekyll-sitemap'
