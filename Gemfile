@@ -6,11 +6,11 @@ source "https://rubygems.org"
 
 gem 'jekyll'
 gem 'jekyll-theme-minimal'
-gem 'liquid_reading_time'
 
 
 group :jekyll_plugins do
   gem 'github-pages'
   gem 'jekyll-seo-tag'
+  gem 'liquid_reading_tag'
 end
 gem 'jekyll-sitemap'
