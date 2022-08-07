@@ -76,11 +76,6 @@
         {{ page.updated | date_to_string | append: "  更新" }}
       </div>
       {% endif %}
-      
-      <div>
-      {% capture time %}{{ content | reading_time }}{% endcapture %}
-<p>この記事は約{{ time }}分で読めます</p>
-      </div>
 
 
       <div>
