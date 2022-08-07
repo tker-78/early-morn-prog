@@ -79,12 +79,6 @@
         {{ page.updated | date_to_string | append: "  更新" }}
       </div>
       {% endif %}
-      
-      <!-- minute to read -->
-      <div>
-      この記事は、{{ content | number_of_words }}文字です.  
-      </div>
-
 
       <div>
         {% include toc.html html=content id="toc" class="inline-toc" ordered=true h_max=3 h_min=2 %}
