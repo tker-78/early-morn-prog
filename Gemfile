@@ -6,6 +6,7 @@ source "https://rubygems.org"
 
 gem 'jekyll'
 gem 'jekyll-theme-minimal'
+gem 'liquid_reading_time'
 
 
 group :jekyll_plugins do
