@@ -32,7 +32,9 @@
     {% include navbar_post.html %}
     <div class="wrapper">
       <header>
-        <h1 style="color:darkslategrey;"">{{ page.title }}</h1> 
+        <h1 style="color:darkslategrey;"">{{ page.title }}</h1>
+         
+        <p>{{ page.description }}</p>
         
 
         {% include breadcrumbs.html %}
@@ -82,7 +84,7 @@
       <div>
         <!-- <span style="font-size:1.4em; color:black;">Contents</span> -->
         
-        <p>{{ page.description }}</p>
+        
         
         {% include toc.html html=content id="toc" class="inline-toc" ordered=true h_max=3 h_min=2 %}
       </div>
