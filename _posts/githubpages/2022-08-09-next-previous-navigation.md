@@ -14,6 +14,8 @@ comment: true
 
 `_include/next_previous.html`を作成  
 
+{% raw %}
+
  ```html
 <div class="next-previous">
   {% assign cat = page.categories[0] %}
@@ -37,6 +39,7 @@ comment: true
 {% endfor %}
 </div>
 ```
+{% endraw %}
 
 これでナビゲーションが表示される.  
 ![]({{ "images/posts/githubpages/2022-08-09-next-previous-navigation/image1.png" | relative_url }})
