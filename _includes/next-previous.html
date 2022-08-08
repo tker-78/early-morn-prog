@@ -3,7 +3,7 @@
     {% if post.title == page.title and post.date == page.date %}
       <a href="{{ post.previous.url }}">{{ post.previous.title }}<<</a>
       <a href="{{ post.next.url }}"> >>{{ post.next.title }}</a>
-      {{ post.previous | append: ".previous" | append: ".url" }}
+      {{ post.previous.previous.url }}
     {% endif %}
   {% endfor %}
 </div>
