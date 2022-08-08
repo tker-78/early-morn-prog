@@ -15,7 +15,7 @@
   	{% if forloop.first == false %}
   	  {% assign next_post = cat_list[pOffset] %}
       <span class="next-previous-item btn btn-info">
-        <a href="{{ next_post.url }}" style="margin-left: 15px;"> >>{{ next_post.title }}</a>
+        <a href="{{ next_post.url }}"> >>{{ next_post.title }}</a>
       </span>
   	{% endif %}
 
