@@ -246,3 +246,7 @@ section { margin-top: 30px; }
 
 /* asciinema */
 #player { margin-top: 40px; }
+
+/* next-previous */
+.next-previous { margin-top: 10px; margin-bottom: 15px; }
+.next-previous .next-previous-item a { color: white; }
