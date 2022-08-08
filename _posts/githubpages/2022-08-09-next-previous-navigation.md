@@ -41,7 +41,6 @@ comment: true
 これでナビゲーションが表示される.  
 ![]({{ "images/posts/githubpages/2022-08-09-next-previous-navigation/image1.png" | relative_url }})
 
-## デザインの調整
 
 
 
