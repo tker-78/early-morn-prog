@@ -1,9 +1,9 @@
-——-
+---
 title: next-previousボタンの実装
 description: ポストのページで、関連する記事に遷移したいときに、いちいち親ページに戻るとめんどくさいので、ポストのページに、next(次の記事), previous(前のページ)を実装して、同じカテゴリ内の記事に遷移できるようにする.  
 category: githupages
 comment: true
-———
+---
 
 ## いいプラグインはなさそう
 [ここ](https://gist.github.com/stravid/4078840)のソースコードを参考にする.  
