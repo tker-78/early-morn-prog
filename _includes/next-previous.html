@@ -1,6 +1,6 @@
 <div>  
   {% assign cat = page.category %}
-  {% for post in page.category %}
+  {% for post in site.categories.githubpages %}
     {% if post.title == page.title %}
       <a href="{{ post.previous.url }}">{{ post.previous.title }}</a>
       <a href="{{ post.next.url }}">{{ post.next.title }}</a>
