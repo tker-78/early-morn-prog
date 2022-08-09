@@ -4,7 +4,5 @@
 
 tasks:
   - init: rvm install 2.6.8
-  - command: rvm use 2.6.8
-  - command: bundle install
 
 

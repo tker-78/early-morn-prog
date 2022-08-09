@@ -68,4 +68,4 @@ breadcrumbs.html
 {% endraw %}
 
 実装完了. 
-![]({{ "images/posts/githubpages/2022-08-04-breadcrumbs/image2.png" }})
+![]({{ "/images/posts/githubpages/2022-08-04-breadcrumbs/image2.png" }})

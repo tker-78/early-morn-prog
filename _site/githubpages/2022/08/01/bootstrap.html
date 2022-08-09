@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=00713875a4e7f6caab232798b693f40155011a18">
+    <link rel="stylesheet" href="/assets/css/style.css?v=02367553684ce1dac48ebc4cf4daf8af945e9b2c">
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
@@ -117,31 +117,45 @@
   
 
   
+
+  
   	
   	
 
   	
   	  
-      <span class="next-previous-item btn btn-danger">
-        <a href="/githubpages/2022/07/31/toc.html" >Table of Contentsの実装<< </a>
+      <span>
+       prev
+        <a href="/githubpages/2022/07/31/toc.html" class="next-previous-item btn btn-outline-warning btn-sm d-inline-block text-truncate" style="max-width: 45%;"> Table of Contentsの実装 </a>
       </span>
   	
   	
   	  
-      <span class="next-previous-item btn btn-info">
-        <a href="/githubpages/2022/08/01/comment.html" style="margin-left: 15px;"> >>コメント欄の実装</a>
+      <span>
+        <a href="/githubpages/2022/08/01/comment.html" class="next-previous-item btn btn-outline-info btn-sm d-inline-block text-truncate" style="max-width: 45%;">コメント欄の実装</a>
+         next
       </span>
   	
 
   	
 </div>
-        <nav aria-label="breadcrumb">
+        
+  
+     
+
+
+
+
+<nav aria-label="breadcrumb">
   <ol class="breadcrumb">
      <li class="breadcrumb-item"><i class="fa-solid fa-house"></i><a href=/>Home</a></li>
-    <li class="breadcrumb-item active" aria-current="page"><a href="/#githubpages">githubpages</a></li>
+    <li class="breadcrumb-item active" aria-current="page"><a href="/#githubpages">GitHub Pages</a></li>
     <li class="breadcrumb-item active" aria-current="page">bootstrapの導入</li>
   </ol>
 </nav>
+
+     
+
         
 
         
@@ -178,12 +192,14 @@
 <h2 id="インストール">インストール</h2>
 <h3 id="css">CSS</h3>
 <p>下記のスクリプトを&lt;head&gt;内に配置する.</p>
+
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"</span> <span class="na">integrity=</span><span class="s">"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;</span>
 </code></pre></div></div>
 
 <h3 id="js">js</h3>
 <p>jQuery, Popper.jsなどのjsプラグインが必要.<br />
 下記のスクリプトを&lt;/body&gt;の直前に配置する.</p>
+
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://code.jquery.com/jquery-3.3.1.slim.min.js"</span> <span class="na">integrity=</span><span class="s">"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"</span> <span class="na">integrity=</span><span class="s">"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"</span> <span class="na">integrity=</span><span class="s">"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;&lt;/script&gt;</span>
@@ -191,6 +207,7 @@
 
 <h2 id="headerを作ってみる">headerを作ってみる</h2>
 <p>bootstrapのサイトからnavbarのサンプルをコピー.</p>
+
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">"navbar navbar-expand-lg navbar-light bg-light"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"navbar-brand"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Navbar<span class="nt">&lt;/a&gt;</span>
   <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"navbar-toggler"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">data-toggle=</span><span class="s">"collapse"</span> <span class="na">data-target=</span><span class="s">"#navbarSupportedContent"</span> <span class="na">aria-controls=</span><span class="s">"navbarSupportedContent"</span> <span class="na">aria-expanded=</span><span class="s">"false"</span> <span class="na">aria-label=</span><span class="s">"Toggle navigation"</span><span class="nt">&gt;</span>
@@ -261,6 +278,112 @@
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
         
       </div>
+
+      <div>
+        <div class="related_posts">
+  <h3>Most related</h3>
+  
+    <p><a href="/githubpages/2022/08/09/next-previous-navigation.html">next-previousボタンの実装</p>
+    
+    <div class="related_image">
+      <img src="/images/posts/githubpages/2022-08-09-next-previous-navigation/thumbnail.png" />
+    </div>
+    
+
+  </div> 
+  
+    <p><a href="/english/2022/08/09/todays-word.html">今日の単語</p>
+    
+
+    <div class="related_image">
+      <img src="/images/english.png" />
+    </div>
+    
+
+  </div> 
+  
+    <p><a href="/english/2022/08/08/todays-word.html">今日の単語</p>
+    
+
+    <div class="related_image">
+      <img src="/images/english.png" />
+    </div>
+    
+
+  </div> 
+  
+    <p><a href="/english/2022/08/07/todays-word.html">今日の単語</p>
+    
+
+    <div class="related_image">
+      <img src="/images/english.png" />
+    </div>
+    
+
+  </div> 
+  
+    <p><a href="/english/2022/08/06/todays-word.html">今日の単語</p>
+    
+
+    <div class="related_image">
+      <img src="/images/english.png" />
+    </div>
+    
+
+  </div> 
+  
+    <p><a href="/githubpages/2022/08/05/updated-date.html">ブログポストの更新日の表示</p>
+    
+    <div class="related_image">
+      <img src="/images/posts/githubpages/2022-08-05-updated-date/thumbnail.png" />
+    </div>
+    
+
+  </div> 
+  
+    <p><a href="/english/2022/08/05/todays-word.html">今日の単語</p>
+    
+
+    <div class="related_image">
+      <img src="/images/english.png" />
+    </div>
+    
+
+  </div> 
+  
+    <p><a href="/ap/2022/08/05/security.html">セキュリティの用語</p>
+    
+
+    <div class="related_image">
+      <img src="/images/ap.png" />
+    </div>
+    
+
+  </div> 
+  
+    <p><a href="/ap/2022/08/05/network.html">ネットワークの用語</p>
+    
+
+    <div class="related_image">
+      <img src="/images/ap.png" />
+    </div>
+    
+
+  </div> 
+  
+    <p><a href="/ap/2022/08/05/database.html">データベースの用語</p>
+    
+
+    <div class="related_image">
+      <img src="/images/ap.png" />
+    </div>
+    
+
+  </div> 
+  
+</div> 
+      </div>
+
 
       </section>
 
