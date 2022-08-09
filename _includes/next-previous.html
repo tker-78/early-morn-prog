@@ -8,13 +8,13 @@
 
   	{% if forloop.last == false %}
   	  {% assign previous_post = cat_list[nOffset] %}
-      <span class="next-previous-item btn btn-danger d-inline-block text-truncate" style="max-width: 45%;">
+      <span class="next-previous-item btn btn-danger d-inline-block text-truncate" style="max-width: 50%;">
         <a href="{{ previous_post.url }}">{{ previous_post.title }}<< </a>
       </span>
   	{% endif %}
   	{% if forloop.first == false %}
   	  {% assign next_post = cat_list[pOffset] %}
-      <span class="next-previous-item btn btn-info d-inline-block text-truncate" style="max-width: 45%;">
+      <span class="next-previous-item btn btn-info d-inline-block text-truncate" style="max-width: 50%;">
         <a href="{{ next_post.url }}"> >>{{ next_post.title }}</a>
       </span>
   	{% endif %}
