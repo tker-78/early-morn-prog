@@ -5,7 +5,7 @@ category: githubpages
 comment: true
 ---
 
-## いいプラグインはなさそう
+## 参考にしたサイト
 [ここ](https://gist.github.com/stravid/4078840)のソースコードを参考にする.  
 
 それと[ここ](https://talk.jekyllrb.com/t/how-to-link-to-next-and-previous-posts-for-same-blog-category/629)も参考にする.  
@@ -39,11 +39,41 @@ comment: true
 {% endfor %}
 </div>
 ```
+
+レイアウトファイル
+```html
+{% include next-previous.html %}
+```
+
+
 {% endraw %}
+
+
 
 これでナビゲーションが表示される.  
 ![]({{ "images/posts/githubpages/2022-08-09-next-previous-navigation/image1.png" | relative_url }})
 
+
+
+## デザインの調整
+
+```
+<span class="btn btn-primary d-inline-block text-truncate" style="max-width: 50%;">
+  <a>...</a>
+</span>
+
+```
+
+### d-inline-block
+同一のラインにNextとPreviousを配置するために指定する.  
+[d-inline](https://getbootstrap.jp/docs/4.4/utilities/display/#examples)
+
+
+### text-truncate
+ポストのタイトルが長い場合は同一ラインにNextとPreviousを配置できないため、切り捨て表示を指定する.  
+
+以上で下記のように表示される.  
+![]( {{"images/posts/githubpages/2022-08-09-next-previous-navigation/image2.png" | relative_url }} )
 
 
 
