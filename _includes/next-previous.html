@@ -9,7 +9,8 @@
   	{% if forloop.last == false %}
   	  {% assign previous_post = cat_list[nOffset] %}
       <span class="next-previous-item btn btn-danger d-inline-block text-truncate" style="max-width: 45%;">
-        <a href="{{ previous_post.url }}"> {{ previous_post.title }} </a>
+        <a href="{{ previous_post.url }}"> 
+        <i class="fas fa-arrow-from-right"></i>{{ previous_post.title }} </a>
       </span>
   	{% endif %}
   	{% if forloop.first == false %}
