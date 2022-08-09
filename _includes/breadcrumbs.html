@@ -1,7 +1,18 @@
+{% for cat in site.data.categories %}
+  {% if cat.category == page.category %}
+     {% assign alias_cat =  cat.alias %}
+
+
+
+
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
      <li class="breadcrumb-item"><i class="fa-solid fa-house"></i><a href={{"/" | relative_url }}>Home</a></li>
-    <li class="breadcrumb-item active" aria-current="page"><a href="{{"/#" | append: page.category | relative_url }}">{{ page.category }}</a></li>
+    <li class="breadcrumb-item active" aria-current="page"><a href="{{"/#" | append: page.category | relative_url }}">{{ alias_cat }}</a></li>
     <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
   </ol>
 </nav>
+
+     {% break %}
+  {% endif %}
+{% endfor %}
