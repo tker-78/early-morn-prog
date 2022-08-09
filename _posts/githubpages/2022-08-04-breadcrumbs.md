@@ -9,9 +9,8 @@ updated: 2022-08-09
 ブログ記事の上部にパンくずリスト(現在ページのナビゲーション)を導入する.  
 
 ## ソースコード
-{% raw %}   
   
-```html
+{% highlight html %}
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
      <li class="breadcrumb-item"><i class="fa-solid fa-house"></i><a href={{"/" | relative_url }}>Home</a></li>
@@ -19,8 +18,8 @@ updated: 2022-08-09
     <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
   </ol>
 </nav>
-```
-{% endraw %}
+{% endhighlight %}
+
 
 このようにパンくずリストが表示される.  
 ![]({{ "images/posts/githubpages/2022-08-04-breadcrumbs/image1.png" | relative_url }})
