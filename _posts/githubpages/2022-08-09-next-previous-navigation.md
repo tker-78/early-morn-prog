@@ -3,6 +3,7 @@ title: next-previousボタンの実装
 description: ポストのページで、関連する記事に遷移したいときに、いちいち親ページに戻るとめんどくさいので、ポストのページに、next(次の記事), previous(前のページ)を実装して、同じカテゴリ内の記事に遷移できるようにする.  
 category: githubpages
 comment: true
+thumbnail: true
 ---
 
 ## 参考にしたサイト
