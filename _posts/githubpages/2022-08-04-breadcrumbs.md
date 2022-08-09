@@ -10,7 +10,9 @@ updated: 2022-08-09
 
 ## ソースコード
   
-{% highlight html %}
+{% raw %}  
+
+```html
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
      <li class="breadcrumb-item"><i class="fa-solid fa-house"></i><a href={{"/" | relative_url }}>Home</a></li>
@@ -18,7 +20,8 @@ updated: 2022-08-09
     <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
   </ol>
 </nav>
-{% endhighlight %}
+```
+{% endraw %}
 
 
 このようにパンくずリストが表示される.  
