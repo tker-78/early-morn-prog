@@ -102,6 +102,8 @@ section {
 .next-previous {
   margin: 20px auto;
   width: 100%;
+  display: flex;
+  justify-content: center;
   .next-previous-item {
     a {
       color: white;
