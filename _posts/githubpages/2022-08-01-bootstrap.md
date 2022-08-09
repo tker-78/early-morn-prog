@@ -5,6 +5,7 @@ comment: true
 thumbnail: true
 ---
 
+
 ## bootstrapのバージョン
 bootstrap5はGitHub Pagesでの動作が保証されていないみたいなので、`v4.3`を使うことにする.  
 
@@ -26,6 +27,8 @@ jQuery, Popper.jsなどのjsプラグインが必要.
 
 ## headerを作ってみる
 bootstrapのサイトからnavbarのサンプルをコピー.  
+
+  
 ```html
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">Navbar</a>
