@@ -72,6 +72,7 @@
                 <li class="menu-navigation-list-item"><a href="#githubpages">GitHubPages</a></li>
                 <li class="menu-navigation-list-item"><a href="#english">English</a></li>
                 <li class="menu-navigation-list-item"><a href="#ap">応用情報技術者試験</a></li>
+                <li class="menu-navigation-list-item"><a href="#sql">SQL</a></li>
               </ul>
             </nav>
 
@@ -105,6 +106,17 @@
               <ol class="menu-category-list has-images">
 
               {% for post in site.categories.ap %} 
+                {% include display_posts.html %}
+              {% endfor %}
+              </ol>
+            </div>
+            
+            <div id="sql" class="menu-category">
+              <h3 class="menu-category-name">SQL</h3>
+              <p>SQLの基本 </p>
+              <ol class="menu-category-list has-images">
+
+              {% for post in site.categories.sql %} 
                 {% include display_posts.html %}
               {% endfor %}
               </ol>
