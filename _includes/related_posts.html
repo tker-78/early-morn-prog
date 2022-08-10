@@ -1,10 +1,18 @@
-      
 <div class="related_posts">
   <h3>Most related</h3>
   {% for post in site.related_posts %}
-  <div>
     <p><a href="{{ post.url }}">{{ post.title }}</p>
-    <img src="images/{{ post.path | replace: "_posts", "posts" | remove: ".md"}}/thumbnail.png" />
+    {% if post.thumbnail == true %}
+    <div class="related_image">
+      <img src="/images/{{ post.path | replace: "_posts", "posts" | remove: ".md" }}/thumbnail.png" />
+    </div>
+    {% else %}
+
+    <div class="related_image">
+      <img src="/images/{{ post.categories[0] }}.png" />
+    </div>
+    {% endif %}
+
   </div> 
   {% endfor %}
 </div> 

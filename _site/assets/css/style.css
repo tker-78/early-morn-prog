@@ -248,5 +248,11 @@ section { margin-top: 30px; }
 #player { margin-top: 40px; }
 
 /* next-previous */
-.next-previous { margin-top: 10px; margin-bottom: 15px; }
+.next-previous { margin-top: 20px; margin-bottom: 20px; }
 .next-previous .next-previous-item a { color: white; }
+
+/* related_posts */
+.related_posts { margin-top: 20px; }
+.related_posts a { margin-bottom: 0; padding-bottom: 0; }
+
+.related_image { width: 100px; margin-bottom: 20px; margin-top: 0; }
