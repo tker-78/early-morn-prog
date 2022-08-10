@@ -1,5 +1,5 @@
 ---
-title: 集約と並び替え
+title: 3. 集約と並び替え
 category: sql
 comment: true
 ---
