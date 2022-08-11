@@ -7,7 +7,7 @@ comment: false
 ### keep up with
 \~に追いつく
 
-### a course of actione
+### a course of action
 一連の行動
 
 ### raffle
