@@ -216,7 +216,7 @@ footer { width: 270px; float: left; position: fixed; bottom: 50px; -webkit-font-
 @media print { body { padding: 0.4in; font-size: 12pt; color: #444; } }
 header h1 { margin-top: 60px; }
 
-h2 { margin-top: 20px; font-size: 1.6em; color: darkslategrey; }
+h2 { background: #ddd; border-radius: 5px; margin-top: 20px; padding-top: 10px; padding-bottom: 10px; font-size: 1.6em; color: darkslategrey; }
 
 h3 { margin-top: 15px; font-size: 1.2em; color: darkslategrey; }
 
