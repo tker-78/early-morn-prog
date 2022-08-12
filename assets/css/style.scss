@@ -8,7 +8,11 @@ header h1 {
 }
 
 h2 {
+  background: #ddd;
+  border-radius: 5px;
   margin-top: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   font-size: 1.6em;
   color: darkslategrey;
 }
@@ -132,4 +136,49 @@ section {
 img {
   max-width: 50%;
   margin: 20px auto;
+}
+
+
+.footer {
+  background: #f4f5f6;
+  border-top: 1px solid #eff0f1;
+  width: 100%;
+  margin-top: 50px;
+}
+.footer-navigation {
+  color: #b0b8c1;
+  margin: 0 auto;
+  padding-top: 1.35714em;
+  padding-bottom: 1.14286em;
+  text-align: center;
+}
+.icon-square-footer {
+  background-position: 0 -146px;
+  height: 23px;
+  width: 23px;
+  display: inline-block;
+  margin-bottom: 0.35714em;
+  position: relative;
+}
+.footer-navigation-item {
+  display: inline-block;
+  margin-left: 16px;
+  position: relative;
+}
+.footer-navigation-item:before {
+  position: absolute;
+  left: -12px;
+}
+.footer-navigation-item:first-child {
+  margin-left: 0;
+}
+.footer-navigation-item a {
+  color: #b0b8c1;
+  -webkit-transition: color 0.3s ease;
+  -moz-transition: color 0.3s ease;
+  -o-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+.footer-navigation-item a:hover {
+  color: #3e8cb7;
 }
