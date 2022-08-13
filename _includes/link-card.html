@@ -1,10 +1,16 @@
 <div class="card" style="width: 18rem;">
     <img src="http://www.google.com/s2/favicons?domain={{ link_url | remove: "https://" }}&sz=256" alt="google-favicon" style="width: 5rem;">
     <div class="card-body">
-      <h5 class="card-title">{{ link_url }}</h5>
+     {% if link_title %}
+      <h5 class="card-title">{{ link_title }}</h5>
+      {% endif %}
+      
+      <p class="card-text">{{ link_url }}</p>
+       
       {% if link_desc %}
       <p class="card-text">{{ link_desc }}</p>
       {% endif %}
+      
       <a href="{{ link_url }}" class="btn btn-primary stretched-link">Go to the link. </a>
     </div>
 </div>
