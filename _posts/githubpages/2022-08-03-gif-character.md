@@ -10,7 +10,7 @@ thumbnail: true
 実装してみることにしたので、その方法を解説する.  
 
 ## 完成形
-<script id="asciicast-EgwFgg9BGqbBWwKytRJ0WKNHE" src="https://asciinema.org/a/EgwFgg9BGqbBWwKytRJ0WKNHE.js" async data-autoplay="true" data-size="big" autoplay="true" ></script>
+<script id="asciicast-eskeUH2K4i7WLsggkkZzhvDqS" src="https://asciinema.org/a/eskeUH2K4i7WLsggkkZzhvDqS.js" async data-autoplay="true" data-size="big" autoplay="true"></script>
 
 ## GIFイメージを作成する 
 
@@ -80,7 +80,9 @@ $ asciinema upload [filename]
 
 ![]({{ "/images/posts/githubpages/2022-08-03-gif-character/image3.png" | relative_url }})
 
-[![asciicast](https://asciinema.org/a/EgwFgg9BGqbBWwKytRJ0WKNHE.svg)](https://asciinema.org/a/EgwFgg9BGqbBWwKytRJ0WKNHE)
+
+<script id="asciicast-eskeUH2K4i7WLsggkkZzhvDqS" src="https://asciinema.org/a/eskeUH2K4i7WLsggkkZzhvDqS.js" async data-autoplay="true" data-size="big" autoplay="true"></script>
+
 
 このように動くタイトル文字が完成.  
 
