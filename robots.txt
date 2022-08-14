@@ -10,4 +10,4 @@ Allow: /static/glade/
 Allow: /tag/js/
 Disallow: 
 Noindex: 
-Sitemap: https://www.early-morn-prog.org/sitemap
+Sitemap: https://www.early-morn-prog.org/sitemap.xml
