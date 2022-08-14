@@ -1,1 +1,13 @@
-Sitemap: http://localhost:4000/sitemap.xml
+User-Agent: *
+Allow: /ads/preferences/
+Allow: /dtt/k
+Allow: /gpt/
+Allow: /pagead/show_ads.js
+Allow: /pagead/js/adsbygoogle.js
+Allow: /pagead/*/show_ads_impl.js
+Allow: /static/glade.js
+Allow: /static/glade/
+Allow: /tag/js/
+Disallow: 
+Noindex: 
+Sitemap: https://www.early-morn-prog.org/sitemap.xml
