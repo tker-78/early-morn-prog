@@ -8,4 +8,6 @@ Allow: /pagead/*/show_ads_impl.js
 Allow: /static/glade.js
 Allow: /static/glade/
 Allow: /tag/js/
-Noindex: /
+Disallow: 
+Noindex: 
+Sitemap: https://www.early-morn-prog.org/sitemap
