@@ -15,7 +15,7 @@ description: 2022/07/30に学習した単語
 > forge a relationship  
 > 関係を築く.  
 
-### chreographer
+### choreographer
 振付師.  
 
 ### curb
