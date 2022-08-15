@@ -92,4 +92,32 @@ category: english
 > The meeting starts promptly at 1 P.M.  
 > 会議は午後1時ちょうどに始まります.  
 
+### keenly
+鋭く、激しく
+> ABC inc., are keenly aware of their responsibility.  
+> ABC社は、彼らの責任について痛感している.  
+
+### alongside 
+\~と一緒に
+along withと同じ意味、使われ方.  
+
+### private function  
+貸切り
+
+### diverse
+多様な
+
+### punctual
+(人が)時間を守る
+
+### prominently
+目立って
+
+### testimonial
+ユーザーからの声
+
+### jointly
+共同で
+
+
 

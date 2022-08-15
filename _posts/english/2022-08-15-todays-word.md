@@ -57,6 +57,9 @@ category: english
 
 ### in light of
 \~を考慮に入れると
+> In light of the high demand for the new lines of camera bag, Rhino intends to hire extra employees to work at its Frampton plant.  
+> ライノ社は、新製品のカメラバッグの需要が高いことを考慮し、プランプトン工場で働く従業員を追加採用する予定だ.  
+
 
 ### commence
 始まる
