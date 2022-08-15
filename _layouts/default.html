@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{ site.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+
+    <!-- bootstrap 4.3.1 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://tker-78.github.io/early-morn-prog/assets/base.css" media="screen" rel="stylesheet" type="text/css" />
+    <!-- <link rel="shortcut icon" href="https://tker-78.github.io/early-morn-prog/assets/favicon.ico" /> -->
+
+    <!-- <script src="https://tker-78.github.io/early-morn-prog/assets/modernizr.js" type="text/javascript"></script> -->
+
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/8b7bd21f06.js" crossorigin="anonymous"></script>
+
+    {% seo %}
+
+ <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-17BFKX9WXX"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-17BFKX9WXX');
+    </script>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3863517147070995"
+    crossorigin="anonymous"></script>
+
+ 
+
+  </head>
+  <body>
+    {% include navbar.html %}
+    <div class="wrapper">
+      <div class="profile">
+        <section class="profile-masthead" id="masthead">
+          <header class="profile-logo">
+            <div class="profile-logo-image">
+              <img alt="early-morn-prog" src="https://tker-78.github.io/early-morn-prog/images/logo.png" />
+            </div>
+            <div class="profile-name">
+              <h1>{{ site.title }}</h1>
+            </div>
+          </header>
+          <aside class="profile-summary">
+            <div class="summary-location summary-module">
+              <p>２児の父が早朝の自由時間を使って学んだ内容の記録である. </p>
+            </div>
+          </aside>
+
+        </section>
+
+        <section class="profile-content" id="asciinema">
+          <div>
+            <script id="asciicast-eskeUH2K4i7WLsggkkZzhvDqS" src="https://asciinema.org/a/eskeUH2K4i7WLsggkkZzhvDqS.js" async data-autoplay="true" data-size="big" autoplay="true"></script>
+          </div>
+        </section>
+
+        <section class="profile-content" id="content">
+          <!-- TODO header? -->
+          <div class="profile-description">
+            <p>カテゴリ一覧</p>
+          </div>
+
+          <article class="profile-menu" id="menu">
+            <nav class="menu-navigation">
+              <ul class="menu-navigation-list">
+                <li class="menu-navigation-list-item"><a href="#githubpages">GitHubPages</a></li>
+                <li class="menu-navigation-list-item"><a href="#english">English</a></li>
+                <li class="menu-navigation-list-item"><a href="#ap">応用情報技術者試験</a></li>
+                <li class="menu-navigation-list-item"><a href="#sql">SQL</a></li>
+              </ul>
+            </nav>
+
+
+            <div id="githubpages" class="menu-category">
+              <h3 class="menu-category-name">GitHub Pages</h3>
+              <p>Jekyllを使ってオリジナルのブログを作り上げる. </p>
+              <ol class="menu-category-list has-images">
+
+              {% for post in site.categories.githubpages %} 
+                {% include display_posts.html %}
+              {% endfor %}
+              </ol>
+            </div>
+
+
+            <div id="english" class="menu-category">
+              <h3 class="menu-category-name">English</h3>
+              <p>TOEIC 900点に向けた学習記録. </p>
+              <ol class="menu-category-list has-images">
+
+              {% for post in site.categories.english %} 
+                {% include display_posts.html %}
+              {% endfor %}
+              </ol>
+            </div>
+          
+            <div id="ap" class="menu-category">
+              <h3 class="menu-category-name">応用情報技術者試験</h3>
+              <p>応用情報合格に向けた学習記録. </p>
+              <ol class="menu-category-list has-images">
+
+              {% for post in site.categories.ap %} 
+                {% include display_posts.html %}
+              {% endfor %}
+              </ol>
+            </div>
+            
+            <div id="sql" class="menu-category">
+              <h3 class="menu-category-name">SQL</h3>
+              <p>SQLの基本 </p>
+              <ol class="menu-category-list has-images">
+
+              {% for post in site.categories.sql %} 
+                {% include display_posts.html %}
+              {% endfor %}
+              </ol>
+            </div>
+            
+            
+            
+            <div id="pagination" class="menu-category">
+              <h3 class="menu-category-name">Pagination</h3>
+              <p>Pagination Test </p>
+              <ol class="menu-category-list has-images">
+
+              {% for post in site.posts %} 
+                {% include display_posts.html %}
+              {% endfor %}
+              
+              
+              </ol>
+            </div>
+
+          </article>
+
+          
+        </section>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <nav class="footer-navigation">
+        <i class="icon-square-footer"></i>
+        <ul class="footer-navigation-list">
+          <li class="footer-navigation-item"><a href="{{ "/policy" | relative_url }}">Privacy Policy</a></li>
+          <li class="footer-navigation-item"><a href="{{ "/contact" | relative_url }}">Contact</a></li>
+          <li class="footer-navigation-item"><a href="{{ "/sitemap.xml" | relative_url }}">Sitemap</a></li>
+        </ul>
+        <p class="copyright">© 2022 tker-78. All rights reserved.</p>
+      </nav>
+    </footer>
+
+    <script type="text/javascript">
+      if(window == window.top) document.body.style.display = "block"; else window.top.location = window.location;
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-40704740-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
