@@ -121,6 +121,19 @@
               {% endfor %}
               </ol>
             </div>
+            
+            
+            
+            <div id="pagination" class="menu-category">
+              <h3 class="menu-category-name">Pagination</h3>
+              <p>Pagination Test </p>
+              <ol class="menu-category-list has-images">
+
+              {% for post in paginator.posts %} 
+                {% include display_posts.html %}
+              {% endfor %}
+              </ol>
+            </div>
 
           </article>
 
