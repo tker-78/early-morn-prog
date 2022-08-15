@@ -43,3 +43,51 @@ category: english
 ### board of directors
 役員会
 
+### awning
+日よけ
+
+### profile
+人物紹介をする
+
+### scenic
+眺めのいい
+
+### workforce
+全従業員
+
+### in light of
+\~を考慮に入れると
+
+### commence
+始まる
+
+### a wealth of
+豊富な
+
+### allowance
+手当
+> a housing allowance
+> 住宅手当
+
+### surgeon
+外科医
+
+### detergent
+洗剤
+
+### anonymous
+匿名の
+
+### withdraw
+> withdraw a product from the market.  
+> 市場から製品を撤収する
+
+### substitute
+代わりの
+> substitute new for old.  
+> 古いものの代わりに新しいものを使う
+
+
+
+
+
