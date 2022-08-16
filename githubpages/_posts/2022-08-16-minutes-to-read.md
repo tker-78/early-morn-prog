@@ -1,14 +1,9 @@
 ---
 title: Minutes to Readの実装
-category: githubpages
+description: 記事のタイトル近くに、“この記事は約xx分で読めます”の表示をしたい.  
 comment: true
 thumbnail: true
 ---
-
-
-## やりたいこと
-記事のタイトル近くに、  
-“この記事は約xx分で読めます”の表示をしたい.  
 
 {% raw %}
 ## ソースコード
@@ -36,4 +31,4 @@ _includes/post.html
 
 以上で実装完了.  
 
-![]({{"/images/posts/githubpages/2022-08-16-minutes-to-read/image1.png"}})
+![](/images/{{ page.path | replace: "_posts", "posts" | remove: ".md" }}/image1.png)

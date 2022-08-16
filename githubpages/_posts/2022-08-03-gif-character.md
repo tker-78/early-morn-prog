@@ -1,7 +1,6 @@
 ---
 title: GIFでタイトル文字を表現する
 description: GitHub Pagesのトップページ部分にCLI文字でブログタイトルを表示する方法を解説する
-category: githubpages
 comment: true
 thumbnail: true
 ---

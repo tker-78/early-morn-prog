@@ -1,6 +1,5 @@
 ---
 title: bootstrapの導入
-category: githubpages
 comment: true
 thumbnail: true
 ---

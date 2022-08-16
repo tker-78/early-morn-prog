@@ -1,6 +1,5 @@
 ---
 title: ページネーションの実装
-category: githubpages
 description: トップページのカテゴリ別の記事の表示部分に、ページネーションを実装する
 comment: true
 ---

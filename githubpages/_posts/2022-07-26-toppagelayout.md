@@ -1,7 +1,6 @@
 ---
 title: トップページレイアウトの作成
 description: "トップページのレイアウト作成"
-category: githubpages
 dirname: 2022-07-26-toppage_layout
 comment: true
 ---

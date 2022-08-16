@@ -1,7 +1,6 @@
 ---
 title: "デフォルト画像の設定"
 description: "トップページへのデフォルトサムネイル画像の設定"
-category: githubpages
 comment: true
 ---
 
