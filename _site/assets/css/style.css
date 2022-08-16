@@ -282,3 +282,7 @@ img { max-width: 50%; margin: 20px auto; border: 0.5px solid darkslategrey; }
 .footer-navigation-item a { color: #b0b8c1; -webkit-transition: color 0.3s ease; -moz-transition: color 0.3s ease; -o-transition: color 0.3s ease; transition: color 0.3s ease; }
 
 .footer-navigation-item a:hover { color: #3e8cb7; }
+
+/* show more button */
+.show-more { display: flex; align-items: center; }
+.show-more a { margin: 10px auto; }
