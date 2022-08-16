@@ -38,6 +38,12 @@
         {% include next-previous.html %}
         {% include breadcrumbs.html %}
         
+        {% if.page.thumbnail %}
+          <div class="top-image">
+            <img src="images/{{ post.path | replace: "_posts", "posts" | remove: ".md" }}/thumbnail.png" />
+          </div> 
+        {% endif %}
+        
 
         {% if site.logo %}
           <img src="{{site.logo | relative_url}}" alt="Logo" />
