@@ -35,14 +35,23 @@
          
         <p>{{ page.description }}</p>
 
+
+
         {% include next-previous.html %}
-        {% include breadcrumbs.html %}
-        
+
+
+
         {% if page.thumbnail %}
           <div class="top-image">
             <img src="/images/{{ page.path | replace: "_posts", "posts" | remove: ".md" }}/thumbnail.png" />
           </div> 
         {% endif %}
+        
+        
+        <!-- パンくずリスト -->
+        {% include breadcrumbs.html %}
+        
+
         
 
         {% if site.logo %}
