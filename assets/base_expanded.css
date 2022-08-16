@@ -1087,9 +1087,9 @@ p {
   .menu-item-image:before {
     display: none;
   }
-  .menu-item-image img {
-    display: none;
-  }
+ // .menu-item-image img {
+ //   display: none;
+ // }
   .menu-item-info {
     min-height: 21px;
   }
