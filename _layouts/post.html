@@ -37,7 +37,7 @@
 
 
 
-        {% include next-previous.html %}
+
 
 
 
@@ -46,6 +46,9 @@
             <img src="/images/{{ page.path | replace: "_posts", "posts" | remove: ".md" }}/thumbnail.png" />
           </div> 
         {% endif %}
+        
+        
+        {% include next-previous.html %} 
         
         
         <!-- パンくずリスト -->
