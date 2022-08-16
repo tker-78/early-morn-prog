@@ -33,12 +33,12 @@
       <header>
         <h1 style="color:darkslategrey;"">{{ page.title }}</h1>
          
+
+        <!-- パンくずリスト -->
+        {% include breadcrumbs.html %}
+        
+        
         <p>{{ page.description }}</p>
-
-
-
-
-
 
 
         {% if page.thumbnail %}
@@ -51,8 +51,7 @@
         {% include next-previous.html %} 
         
         
-        <!-- パンくずリスト -->
-        {% include breadcrumbs.html %}
+
         
 
         
