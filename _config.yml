@@ -8,9 +8,5 @@ title: 早朝プログラマ
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
-  - liquid_reading_time
-  - jekyll-paginate
 
 timezone: Japan
-
-paginate: 5
