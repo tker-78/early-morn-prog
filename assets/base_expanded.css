@@ -1839,7 +1839,7 @@ p {
     height: 43px;
   }
   .has-images .menu-item:hover .menu-item-info.has-no-meta-content {
-    /*overflow: hidden;*/
+    overflow: hidden;
   }
   .menu-item-name {
     white-space: nowrap;
