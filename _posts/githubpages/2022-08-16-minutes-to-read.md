@@ -5,10 +5,12 @@ comment: true
 thumbnail: true
 ---
 
+
 ## やりたいこと
 記事のタイトル近くに、  
 “この記事は約xx分で読めます”の表示をしたい.  
 
+{% raw %}
 ## ソースコード
 _includes/minutes-to-read.html  
 
@@ -29,6 +31,8 @@ _includes/post.html
 {% assign words = content | strip_html | strip_newlines | size %}
 {% include minutes-to-read.html words=words %}
 ```
+
+{% endraw %}
 
 以上で実装完了.  
 
