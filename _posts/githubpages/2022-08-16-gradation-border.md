@@ -1,6 +1,7 @@
 ---
 title: グラデーションのボーダーを実装する
-category: GitHub pages
+category: githubpages
+thumbnail: true
 ---
 
 ## ソースコード
