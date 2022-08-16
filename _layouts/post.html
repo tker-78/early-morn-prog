@@ -84,6 +84,12 @@
         {% include toc.html html=content id="toc" class="inline-toc" ordered=true h_max=3 h_min=2 %}
       </div>
       
+      
+      <!-- minutes to read -->
+      
+      {% assign words = content | strip_html | strip_newlines | size %}
+{% include minutes-to-read.html words=words %}
+      
       {{ content }}
       
       {% include advertisements.html %}
