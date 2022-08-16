@@ -38,7 +38,7 @@
               <p>category.description</p>
               <ol class="menu-category-list has-images">
 
-              {% for post in site.categories.githubpages %} 
+              {% for post in site.categories[page.category] %} 
                 {% include display_posts.html %}
               {% endfor %}
               </ol>
