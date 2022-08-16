@@ -1,6 +1,6 @@
 ---
 title: 今日の単語
-category: english
+image: /images/logo.png
 ---
 
 ### premier
