@@ -21,4 +21,4 @@ h2 {
 
 以上でこのように表示される.  
 
-![]("/images/{{ page.path | replace: "_post", "post" | remove: ".md" }}/image1.png")
+![](/images/{{ page.path | replace: "_posts", "posts" | remove: ".md"  }}/image1.png)
