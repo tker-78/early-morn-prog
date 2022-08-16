@@ -38,7 +38,8 @@
               <p>category.description</p>
               <ol class="menu-category-list has-images">
 
-              {% for post in site.categories[page.category] %} 
+              {% assign cat = page.category %}
+              {% for post in site.categories[cat] %} 
                 {% include display_posts.html %}
               {% endfor %}
               </ol>
