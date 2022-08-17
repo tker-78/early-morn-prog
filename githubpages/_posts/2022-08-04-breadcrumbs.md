@@ -25,7 +25,7 @@ updated: 2022-08-09
 
 
 このようにパンくずリストが表示される.  
-![]({{ "images/posts/githubpages/2022-08-04-breadcrumbs/image1.png" | relative_url }})
+![]({{ "images/githubpages//_posts/2022-08-04-breadcrumbs/image1.png" | relative_url }})
 
 
 ## エイリアスを表示する
@@ -68,4 +68,4 @@ breadcrumbs.html
 {% endraw %}
 
 実装完了.  
-![]({{ "/images/posts/githubpages/2022-08-04-breadcrumbs/image2.png" }})
+![]({{ "/images/githubpages/_posts/2022-08-04-breadcrumbs/image2.png" }})
