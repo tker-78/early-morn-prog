@@ -237,7 +237,7 @@ h5::before { font-family: "Font Awesome 5 Free"; content: "\f105"; font-weight: 
 .inline-toc { color: black; padding-bottom: 15px; }
 .inline-toc a { color: #4d4398; }
 
-header { margin-top: 30px; }
+header { margin-top: 30px; background-image: url("http://localhost:4000/images/assets/css/style.scss/thumbnail.png"); }
 
 section { margin-top: 30px; }
 
