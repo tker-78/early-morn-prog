@@ -77,7 +77,7 @@ $ asciinema upload [filename]
 アップロード先のリンクが表示されるので、リンク先を確認して、shareボタンを押し、
 表示されている`Embed the player`のリンクを, `.js`, `.css`ファイルをソースファイルに貼り付ける.　　
 
-![]({{ "/images/githubpages/_posts/2022-08-03-gif-character/image3.png" | relative_url }})
+![]({{ "/images/githubpages/posts/2022-08-03-gif-character/image3.png" | relative_url }})
 
 
 <script id="asciicast-eskeUH2K4i7WLsggkkZzhvDqS" src="https://asciinema.org/a/eskeUH2K4i7WLsggkkZzhvDqS.js" async data-autoplay="true" data-size="big" autoplay="true"></script>

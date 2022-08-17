@@ -69,6 +69,6 @@ bootstrapのサイトからnavbarのサンプルをコピー.
 ```
 
 こんな感じでヘッダーの導入完了.  
-![]({{ "/images/posts/githubpages/2022-08-01-bootstrap/image1.png" | relative_url }})
+![]({{ "/images/githubpages/posts/2022-08-01-bootstrap/image1.png" | relative_url }})
 
 以上.  

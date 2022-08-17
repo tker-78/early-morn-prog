@@ -8,7 +8,7 @@ comment: true
 
 GitHub Pagesで運用するブログのトップページの作り込みの記録. 
 こんな感じのトップページにしたい. 
-![]({{site.url}}/{{site.baseurl}}/images/githubpages/_posts/2022-07-26-toppage_layout/image1.png)
+![]({{site.url}}/{{site.baseurl}}/images/githubpages/posts/2022-07-26-toppage_layout/image1.png)
 
 
 `_posts`ディレクトリにブログ記事を投稿すると、topページのスクエアの部分にサムネイル画像とタイトルと要旨が表示されるようにしたい.  

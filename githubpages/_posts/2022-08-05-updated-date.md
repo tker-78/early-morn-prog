@@ -33,7 +33,7 @@ updated: 2022-08-05
 ```
 
 以上で、ブログページに下記の表示が追加された.  
-![]({{ "/images/githubpages/_posts/2022-08-05-updated-date/image1.png" | relative_url }})
+![]({{ "/images/githubpages/posts/2022-08-05-updated-date/image1.png" | relative_url }})
 
 ## インデックスページへの表示
 同様にインデックスページにも導入して完了.  
