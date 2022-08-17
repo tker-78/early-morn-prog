@@ -1,6 +1,7 @@
 ---
 title: ブログポストの更新日の表示
 category: githubpages
+description: ブログポストを更新した際に、投稿日に加えて更新日を表示する. 
 comment: true
 thumbnail: true
 ---
