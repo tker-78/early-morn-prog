@@ -10,14 +10,14 @@
   	  {% assign previous_post = cat_list[nOffset] %}
       <div>
        <span style="font-weight: bold;">Previous</span>
-        <a href="{{ previous_post.url }}" class="next-previous-item btn btn-outline-warning btn-sm d-inline-block text-truncate" style="max-width: 45%;"> {{ previous_post.title }} </a>
+        <a href="{{ previous_post.url }}" class="next-previous-item btn btn-outline-warning btn-sm d-inline-block text-truncate" style="width: 70%;"> {{ previous_post.title }} </a>
       </div>
   	{% endif %}
   	{% if forloop.first == false %}
   	  {% assign next_post = cat_list[pOffset] %}
       <div>
-      <span style="font-weight: bold;">Next</span>
-        <a href="{{ next_post.url }}" class="next-previous-item btn btn-outline-info btn-sm d-inline-block text-truncate" style="max-width: 45%;">{{ next_post.title }}</a>
+      <span style="font-weight: bold;">Next&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <a href="{{ next_post.url }}" class="next-previous-item btn btn-outline-info btn-sm d-inline-block text-truncate" style="width: 70%;">{{ next_post.title }}</a>
       </div>
   	{% endif %}
 
