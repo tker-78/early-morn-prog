@@ -73,7 +73,7 @@ thumbnail: true
 ポストのタイトルが長い場合は同一ラインにNextとPreviousを配置できないため、切り捨て表示を指定する.  
 
 以上で下記のように表示される.  
-![]( {{"images/githubpages/posts/2022-08-09-next-previous-navigation/image2.png" | relative_url }} )
+![]( {{"images/githubpages/_posts/2022-08-09-next-previous-navigation/image2.png" | relative_url }} )
 
 
 
