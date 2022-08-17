@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=1067a1edd9ba7e9dec97f6dc79be76d235c812b9">
+    <link rel="stylesheet" href="/assets/css/style.css?v=f473692f0b0c302177800f01253f2c736bdff368">
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
@@ -98,20 +98,29 @@
 </nav>
 
     <div class="wrapper">
+      
       <header>
+      <!-- <header style="background-image: url('/images/githubpages/posts/2022-07-26-toppagelayout/thumbnail.png'); filter: transparent(70%);" > -->
         <h1 style="color:darkslategrey;"">トップページレイアウトの作成</h1>
          
 
         <!-- パンくずリスト -->
         
   
+     
 
-  
 
-  
 
-  
 
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+     <li class="breadcrumb-item"><i class="fa-solid fa-house"></i><a href=/>Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page"><a href="/">GitHub Pages</a></li>
+    <li class="breadcrumb-item active" aria-current="page">トップページレイアウトの作成</li>
+  </ol>
+</nav>
+
+     
 
         
         
@@ -177,11 +186,6 @@
   	
 </div> 
         
-        
-
-        
-
-        
 
         
 
@@ -216,7 +220,8 @@
       
       <!-- main content -->
       <p>GitHub Pagesで運用するブログのトップページの作り込みの記録. 
-<img src="http://localhost:4000///images/posts/githubpages/2022-07-26-toppage_layout/image1.png" alt="" /></p>
+こんな感じのトップページにしたい. 
+<img src="http://localhost:4000///images/githubpages/posts/2022-07-26-toppage_layout/image1.png" alt="" /></p>
 
 <p><code class="language-plaintext highlighter-rouge">_posts</code>ディレクトリにブログ記事を投稿すると、topページのスクエアの部分にサムネイル画像とタイトルと要旨が表示されるようにしたい.<br />
 ブログ投稿のたびにtopページのHTMLファイルを修正していたらとても面倒なので、投稿と同時に自動表示してくれるようにしたい.</p>

@@ -30,7 +30,9 @@
   <body>
     {% include navbar_post.html %}
     <div class="wrapper">
+      {% assign image_path = page.path | replace: "_posts", "posts" | remove: ".md" %}
       <header>
+      <!-- <header style="background-image: url('/images/{{ image_path }}/thumbnail.png'); filter: transparent(70%);" > -->
         <h1 style="color:darkslategrey;"">{{ page.title }}</h1>
          
 
@@ -49,11 +51,6 @@
         
         
         {% include next-previous.html %} 
-        
-        
-
-        
-
         
 
         {% if site.logo %}

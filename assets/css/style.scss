@@ -88,6 +88,7 @@ h5::before {
 
 header {
   margin-top: 30px;
+  background-image: url("{{ site.url }}/images/{{ page.path | replace: '_posts', 'posts' | remove: '.md'}}/thumbnail.png");
 }
 
 section {
