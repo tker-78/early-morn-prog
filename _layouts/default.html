@@ -82,10 +82,18 @@
               <p>Jekyllを使ってオリジナルのブログを作り上げる. </p>
               <ol class="menu-category-list has-images">
 
-              {% for post in site.categories.githubpages %} 
+
+              <!-- 6記事のみを表示する  -->
+              {% assign cat = "githubpages" %}
+              {% for post in site.categories[cat] limit:6 %} 
                 {% include display_posts.html %}
               {% endfor %}
               </ol>
+              <div class="show-more">
+                {% if site.categories[cat].size > 6 %}
+                  <a href="/{{ cat }}" class="btn btn-outline-info btn-sm" style="max-width: 45%;"> Show More </a>
+                {% endif %}
+              </div>
             </div>
 
 
@@ -93,10 +101,16 @@
               <h3 class="menu-category-name">English</h3>
               <p>TOEIC 900点に向けた学習記録. </p>
               <ol class="menu-category-list has-images">
-
-              {% for post in site.categories.english %} 
+              {% assign cat = "english" %}
+              {% for post in site.categories[cat] limit:6 %} 
                 {% include display_posts.html %}
               {% endfor %}
+              </ol>
+              <div class="show-more">
+                {% if site.categories[cat].size > 6 %}
+                  <a href="/{{ cat }}" class="btn btn-outline-info btn-sm" style="max-width: 45%;"> Show More </a>
+                {% endif %}
+              </div>
               </ol>
             </div>
           
@@ -104,11 +118,17 @@
               <h3 class="menu-category-name">応用情報技術者試験</h3>
               <p>応用情報合格に向けた学習記録. </p>
               <ol class="menu-category-list has-images">
-
-              {% for post in site.categories.ap %} 
+              {% assign cat = "ap" %}
+              {% for post in site.categories[cat] limit: 6 %} 
                 {% include display_posts.html %}
               {% endfor %}
               </ol>
+
+              <div class="show-more">
+                {% if site.categories[cat].size > 6 %}
+                  <a href="/{{ cat }}" class="btn btn-outline-info btn-sm" style="max-width: 45%;"> Show More </a>
+                {% endif %}
+              </div>
             </div>
             
             <div id="sql" class="menu-category">
@@ -116,14 +136,18 @@
               <p>SQLの基本 </p>
               <ol class="menu-category-list has-images">
 
-              {% for post in site.categories.sql %} 
+              {% assign cat = "sql" %}
+              {% for post in site.categories.sql limit: 6%} 
                 {% include display_posts.html %}
               {% endfor %}
               </ol>
-            </div>
-            
-            
 
+              <div class="show-more">
+                {% if site.categories[cat].size > 6 %}
+                  <a href="/{{ cat }}" class="btn btn-outline-info btn-sm" style="max-width: 45%;"> Show More </a>
+                {% endif %}
+              </div>
+            </div>
           </article>
 
           

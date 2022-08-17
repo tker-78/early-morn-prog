@@ -201,3 +201,13 @@ img {
 .footer-navigation-item a:hover {
   color: #3e8cb7;
 }
+
+
+/* show more button */
+.show-more {
+  display: flex;
+  align-items: center;
+  a {
+    margin: 10px auto;
+  }
+}
