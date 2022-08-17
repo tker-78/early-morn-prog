@@ -1,5 +1,5 @@
 {% for cat in site.data.categories %}
-  {% if cat.category == page.category %}
+  {% if cat.category == page.categories[0] %}
      {% assign alias_cat =  cat.alias %}
 
 
