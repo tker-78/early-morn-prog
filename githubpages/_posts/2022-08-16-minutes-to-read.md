@@ -20,7 +20,7 @@ _includes/minutes-to-read.html
 ```
 
 
-_includes/post.html  
+_layouts/post.html  
 
 ```html
 {% assign words = content | strip_html | strip_newlines | size %}
