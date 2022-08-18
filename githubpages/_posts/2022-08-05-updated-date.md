@@ -12,7 +12,7 @@ thumbnail: true
 
 レイアウトファイル.  
 {% raw %}
-```html:aaa.html
+```html
       {% if page.updated %}
       <div>
         <!-- ポストの更新日の表示 -->
