@@ -13,13 +13,13 @@ thumbnail: true
 レイアウトファイル.  
 {% raw %}
 ```html
-      {% if page.updated %}
-      <div>
-        <!-- ポストの更新日の表示 -->
-        <i class="fas fa-pen-fancy"></i>
-        {{ page.updated | date_to_string | append: "  更新" }}
-      </div>
-      {% endif %
+{% if page.updated %}
+  <div>
+    <!-- ポストの更新日の表示 -->
+    <i class="fas fa-pen-fancy"></i>
+    {{ page.updated | date_to_string | append: "  更新" }}
+   </div>
+{% endif %}
 ```
 
 {% endraw %}
