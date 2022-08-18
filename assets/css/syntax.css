@@ -28,7 +28,7 @@
 }
 .highlight .gh {
   color: #66d9ef;
-  background-color: #272822;
+  /* background-color: #272822; */
   font-weight: bold;
 }
 .highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
