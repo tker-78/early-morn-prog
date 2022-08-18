@@ -25,7 +25,7 @@ Gemfileを作成する.
 $ bundle init
 ```
 
-```ruby
+```
 gem ‘jekyll’
 gem ‘jekyll-theme-minimal’
 gem ‘github-pages’, group: :jekyll_plugins
@@ -33,7 +33,11 @@ gem ‘github-pages’, group: :jekyll_plugins
 
 ```zsh
 $ bundle install
-$ bundle exec jekyll serve
+```
+
+## ローカルサーバでのJekyllの実行
+```zsh
+$ bundle exec Jekyll serve
 ```
 
 `localhost:4000`を開いてページを確認する.  
