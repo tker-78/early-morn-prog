@@ -1,5 +1,6 @@
 ---
-title: Run Jekyll on your computer to speed up testing. 
+title: Jekyllをローカルサーバーで走らせる
+description: GitHub Pagesはレポジトリにプッシュしてからビルド完了まで数分がかかる. ローカルサーバーでページを確認することにより、開発スピードをアップできる.  
 ---
 
 ## Rubyのバージョン
@@ -35,6 +36,6 @@ $ bundle install
 $ bundle exec jekyll serve
 ```
 
-`localhost:4000`に接続する.  
+`localhost:4000`を開いてページを確認する.  
 
 
