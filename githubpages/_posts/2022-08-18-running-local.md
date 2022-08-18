@@ -24,7 +24,7 @@ Gemfileを作成する.
 $ bundle init
 ```
 
-```Ruby:Gemfile
+```ruby
 gem ‘jekyll’
 gem ‘jekyll-theme-minimal’
 gem ‘github-pages’, group: :jekyll_plugins
