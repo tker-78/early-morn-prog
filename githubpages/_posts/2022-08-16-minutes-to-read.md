@@ -9,7 +9,7 @@ thumbnail: true
 ## ソースコード
 _includes/minutes-to-read.html  
 
-```html
+```liquid
 <div class=“minutes-to-read”>
   {% if words < 500 %}
     <p>この記事は約1分で読めます</p>
