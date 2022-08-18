@@ -153,10 +153,14 @@ section {
 
 /* image */
 
-img {
-  max-width: 50%;
-  margin: 20px auto;
-  border: 0.5px solid darkslategrey;
+.main-content {
+  display: flex;
+  align-items: center;
+  img {
+    max-width: 50%;
+    margin: 20px auto;
+    border: 0.5px solid darkslategrey;
+    }
 }
 
 
