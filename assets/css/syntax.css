@@ -3,7 +3,7 @@
 .highlight table pre { margin: 0; }
 .highlight, .highlight .w {
   color: #f8f8f2;
-  background-color: #272822;
+  /* background-color: #272822; */
 }
 .highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
   color: #75715e;
