@@ -94,6 +94,12 @@ Each of \~ は、単数扱い
 ### selective
 目の肥えた
 
+### to whom it may concern
+ご担当者様
+
+### avid
+熱心な
+
 
 
 
