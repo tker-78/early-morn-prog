@@ -100,6 +100,19 @@ Each of \~ は、単数扱い
 ### avid
 熱心な
 
+### provided that
+もし\~ならば
+= if
+
+### notwithstanding
+\~にもかかわらず
+> **Notwithstanding** the poor domestic economy, the company continued to increase profits in all areas.  
+> 国内経済が低迷しているにもかかわらず、その会社は全ての分野で増益を続けていました.  
+
+
+### count on
+信頼する
+
 
 
 
