@@ -82,5 +82,19 @@ Each of \~ は、単数扱い
 ### thrive
 成長する、繁栄する
 
+### go into effect
+効力を発する  
+
+同じ意味の言葉に、
+- take effect
+- come into effect  
+
+がある.  
+
+### selective
+目の肥えた
+
+
+
 
 
