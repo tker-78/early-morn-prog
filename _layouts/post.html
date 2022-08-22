@@ -60,6 +60,11 @@
 
         <p>{{ site.description | default: site.github.project_tagline }}</p>
         
+        <!-- toc -->
+        <div>
+          {% include toc.html html=content id="toc" class="inline-toc" ordered=true h_max=3 h_min=2 %}
+        </div>
+          
       </header>
       
       
@@ -83,10 +88,7 @@
       {% assign words = content | strip_html | strip_newlines | size %}
       {% include minutes-to-read.html words=words %}
       
-      <!-- toc -->
-      <div>
-        {% include toc.html html=content id="toc" class="inline-toc" ordered=true h_max=3 h_min=2 %}
-      </div>
+
       
       
       <!-- main content -->
@@ -111,7 +113,7 @@
 
       </section>
 
-        {% include footer_post.html %}
+        <!-- {% include footer_post.html %} -->
 
         <!-- {% if site.github.is_project_page %} -->
         <!-- <p>This project is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p> -->
