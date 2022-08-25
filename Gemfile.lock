@@ -215,6 +215,7 @@ GEM
       jekyll-feed (~> 0.9)
       jekyll-seo-tag (~> 2.1)
     minitest (5.16.2)
+    news-api (0.2.0)
     nokogiri (1.13.8)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
@@ -266,6 +267,7 @@ DEPENDENCIES
   jekyll-sitemap
   jekyll-theme-minimal
   liquid_reading_time
+  news-api
   nokogiri
 
 BUNDLED WITH

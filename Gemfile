@@ -7,6 +7,7 @@ source "https://rubygems.org"
 gem 'jekyll'
 gem 'jekyll-theme-minimal'
 gem 'nokogiri'
+gem 'news-api'
 
 
 group :jekyll_plugins do
