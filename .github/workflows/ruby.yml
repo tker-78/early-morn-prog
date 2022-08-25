@@ -24,4 +24,4 @@ jobs:
     - name: Bundle
       run: bundle install
     - name: Update NEWS
-      run: ruby ${{ github.repositoryUrl }}/_plugins/news.rb
+      run: ruby ${{ github.workspace }}/_plugins/news.rb
