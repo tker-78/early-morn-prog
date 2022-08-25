@@ -1,6 +1,7 @@
 name: Ruby
 
-on:[push]
+on:
+  [push]
 
 
 jobs:
