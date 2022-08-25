@@ -27,6 +27,8 @@ jobs:
       run: ruby ${{ github.workspace }}/_plugins/news.rb
     - name: Commit files
       run: |
+        git config --global user.email "kktak02@gmail.com"
+        git config --global user.name "takuya kinoshita"
         git add .
         git commit -m 'update json'
         git pull
