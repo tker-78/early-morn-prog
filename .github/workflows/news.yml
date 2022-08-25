@@ -9,7 +9,7 @@ name: Ruby
 
 on:
   schedule:
-    - cron: '52 * * * *'
+    - cron: '59 * * * *'
 
 jobs:
   test:
