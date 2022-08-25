@@ -1,0 +1,11 @@
+<!-- NEWS -->
+{% for article in site.data.news.articles limit: 5 %}
+  <div class="news">
+    <p>
+      {{ article.title }}
+      <a href="{{ article.url }}">
+        {{ article.url }}
+      </a>
+    </p>
+  </div>
+{% endfor %}

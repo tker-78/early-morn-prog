@@ -23,3 +23,6 @@ puts articles.first(5)
 
 
 
+File.open("_data/news.json", "w") do |f|
+  f.write response_body
+end

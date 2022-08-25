@@ -35,8 +35,6 @@
       {% assign image_path = page.path | replace: "_posts", "posts" | remove: ".md" %}
       <header>
 
-        <!-- NEWS -->
-        <a href="https://newsapi.org/v2/top-headlines?country=jp&apiKey=b494dadbf4f84d61ba5535455e31b7c5">NEWS</a>
 
 
       <!-- <header style="background-image: url('/images/{{ image_path }}/thumbnail.png'); filter: transparent(70%);" > -->
@@ -106,12 +104,16 @@
 
       {% include next-previous.html %}   
 
+
+      <!-- DISQUSの導入  -->
       <div class="disqus">
-        <!-- DISQUSの導入  -->
         {% if page.comment %}
           {% include disqus.html %}
         {% endif %}
       </div>
+
+      <!-- NEWS API -->
+      {% include news.html %}
       
       
 
