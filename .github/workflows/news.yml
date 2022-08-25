@@ -1,0 +1,36 @@
+name: Update NEWS
+
+on:
+  schedule:
+    - cron: '30 * * * *'
+
+
+jobs:
+  test:
+
+    runs-on: ubuntu-latest
+    # # strategy:
+    # #   matrix:
+    # #     ruby-version: ['2.6', '2.7', '3.0']
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Ruby
+    # # To automatically get bug fixes and new Ruby versions for ruby/setup-ruby,
+    # # change this to (see https://github.com/ruby/setup-ruby#versioning):
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 2.6.8
+        # bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+    - name: Bundle
+      run: bundle install
+    - name: Update NEWS
+      run: ruby ${{ github.workspace }}/_plugins/news.rb
+    - name: Commit files
+      run: |
+        git config --global user.email "kktak02@gmail.com"
+        git config --global user.name "takuya kinoshita"
+        git add .
+        git commit -m 'update json'
+        git pull
+        git push
