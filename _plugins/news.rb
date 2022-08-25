@@ -8,20 +8,6 @@ req = open(url)
 
 response_body = req.read
 
-parsed_json = JSON.parse(response_body)
-
-article = parsed_json["articles"]
-
-
-articles = []
-
-article.each do |a|
-  articles << a['title']
-end
-
-puts articles.first(5)
-
-
 
 File.open("_data/news.json", "w") do |f|
   f.write response_body
