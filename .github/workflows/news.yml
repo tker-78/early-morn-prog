@@ -35,4 +35,4 @@ jobs:
     #- name: Run tests
     #  run: bundle exec rake
     - name: Update NEWS
-      run: ruby /_plugins/news.rb
+      run: ruby ${{ github.repositoryUrl }}/_plugins/news.rb
