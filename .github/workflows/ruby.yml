@@ -25,3 +25,9 @@ jobs:
       run: bundle install
     - name: Update NEWS
       run: ruby ${{ github.workspace }}/_plugins/news.rb
+    - name: Commit files
+      run: |
+        git add .
+        git commit -m 'update json'
+        git pull
+        git push
