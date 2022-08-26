@@ -1,7 +1,6 @@
 name: Update NEWS
 
 on:
-  [push]
   schedule:
     - cron: '55 1,13 * * *'
  
