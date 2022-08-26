@@ -67,10 +67,7 @@
 
         <p>{{ site.description | default: site.github.project_tagline }}</p>
         
-        <!-- toc -->
-        <div>
-          {% include toc.html html=content id="toc" class="inline-toc" ordered=true h_max=3 h_min=2 %}
-        </div>
+
           
       </header>
       
@@ -96,6 +93,10 @@
       {% include minutes-to-read.html words=words %}
       
 
+        <!-- toc -->
+        <div>
+          {% include toc.html html=content id="toc" class="inline-toc" ordered=true h_max=3 h_min=2 %}
+        </div>
       
       
       <!-- main content -->
