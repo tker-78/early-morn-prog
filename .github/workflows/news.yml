@@ -1,9 +1,9 @@
 name: Update NEWS
 
 on:
-  schedule:
-    - cron: '55 1,13 * * *'
- 
+#  schedule:
+#    - cron: '55 1,13 * * *'
+  [push] 
 
 
 jobs:
