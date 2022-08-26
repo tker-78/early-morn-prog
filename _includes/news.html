@@ -4,7 +4,7 @@
     <h3>Today's NEWS</h3>
   </div>
 
-{% for article in site.data.news.articles limit: 8 %}
+{% for article in site.data.news.articles limit: 10 %}
   <div class="news-container ">
     <div class="news-image">
       <a href="{{ article.url }}"><img src="{{ article.urlToImage }}" alt="" />  </a>
