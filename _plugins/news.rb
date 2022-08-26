@@ -3,7 +3,7 @@ require 'json'
 require 'date'
 
 today = Date.today
-url = "https://newsapi.org/v2/top-headlines?q=apple&category=technology&from=#{ (today << 1 ).to_s }&to=#{ today.to_s }&sortBy=popularity&apiKey=b494dadbf4f84d61ba5535455e31b7c5"
+url = "https://newsapi.org/v2/top-headlines?q=apple&category=technology&language=en&from=#{ (today - 7 ).to_s }&to=#{ today.to_s }&sortBy=popularity&apiKey=b494dadbf4f84d61ba5535455e31b7c5"
 req = open(url)
 response_body = req.read
 
