@@ -99,18 +99,15 @@
         {{ content }}
       </div>
       
-      <!-- 広告欄 -->      
-      {% include advertisements.html %}
-
       {% include next-previous.html %}   
 
 
       <!-- DISQUSの導入  -->
-      <div class="disqus">
-        {% if page.comment %}
+      {% if page.comment %}
+        <div class="disqus">
           {% include disqus.html %}
-        {% endif %}
-      </div>
+        </div>
+      {% endif %}
 
       <!-- NEWS API -->
       {% include news.html %}
