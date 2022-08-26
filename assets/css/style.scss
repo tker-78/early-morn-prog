@@ -231,8 +231,17 @@ section {
 
 .news-container {
   margin-top: 25px;
+  display: flex;
+  border: 1px solid gray;
+  border-radius: 4px;
 }
 
-.news-image img {
-  width: 50%;
+.news-image img{
+  width: 300px;
+}
+
+.news-text {
+  width: 100%;
+  margin: 20px 20px;
+  font-size: 1rem;
 }
