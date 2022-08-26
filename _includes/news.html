@@ -4,12 +4,16 @@
       <h3>Today's NEWS</h3>
     </div>
   {% for article in site.data.news.articles limit: 5 %}
-    <p>
+    <div class="news-image">
+      <img src="{{ article.urlToImage }}" alt="" style="height:150px;">
+    </div>
+    
+    <div class="news-text">
       {{ article.title }}
       <a href="{{ article.url }}">
         {{ article.url }}
       </a>
-      <img src="{{ article.urlToImage }}" alt="" style="height:150px;">
-    </p>
+      
+    </div>
   {% endfor %}
 </div>

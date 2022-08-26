@@ -223,7 +223,9 @@ section {
 /* news */
 
 .news {
+  display: flex;
   margin-top: 60px;
   border-top: 1px solid grey;
   padding-top: 20px;
+  
 }
