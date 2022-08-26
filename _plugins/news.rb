@@ -1,11 +1,13 @@
 require 'open-uri'
 require 'json'
+require 'date'
 
-  url = "https://newsapi.org/v2/everything?q=apple&from=2022-08-25&to=2022-08-25&sortBy=popularity&apiKey=b494dadbf4f84d61ba5535455e31b7c5"
-  req = open(url)
-  response_body = req.read
+today = Date.today
+url = "https://newsapi.org/v2/top-headlines?q=apple&from=#{ today.to_s }&to=#{ today.to_s }&sortBy=popularity&apiKey=b494dadbf4f84d61ba5535455e31b7c5"
+req = open(url)
+response_body = req.read
 
 
-  File.open("_data/news.json", "w") do |f|
-    f.write response_body
-  end
+File.open("_data/news.json", "w") do |f|
+  f.write response_body
+end
