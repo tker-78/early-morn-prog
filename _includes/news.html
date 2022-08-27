@@ -1,6 +1,6 @@
-<section class="news-content">
+<div class="news">
   <div class="news-title">
-    <h3>Today's NEWS</h3>
+    <h3>今日のニュース</h3>
   </div>
 
   {% for article in site.data.news.articles limit: 10 %}
@@ -9,9 +9,9 @@
       <a href="{{ article.url }}"><img src="{{ article.urlToImage }}" alt="" /></a>
     </div>
     
-    <div class="news-text stretched-link" >
+    <div class="news-text" >
       <a href="{{article.url }}" >{{ article.title }}</a>
     </div>
   </div>
   {% endfor %}
-</section>
+</div>
