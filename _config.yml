@@ -10,10 +10,3 @@ plugins:
   - jekyll-seo-tag
 
 timezone: Japan
-
-markdown: kramdown
-highlighter: rouge
-
-kramdown:
-  input: GFM
-  syntax_highlighter: rouge
