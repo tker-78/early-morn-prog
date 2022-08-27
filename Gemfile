@@ -14,3 +14,10 @@ group :jekyll_plugins do
   gem 'jekyll-seo-tag'
 end
 gem 'jekyll-sitemap'
+
+
+
+group :test do
+  gem 'rspec'
+  gem 'capybara'
+end
