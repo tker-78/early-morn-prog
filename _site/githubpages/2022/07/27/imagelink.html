@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"> -->
 <!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>ブログページに画像のリンクを貼る | 早朝プログラマ</title>
 <meta name="generator" content="Jekyll v3.9.2" />
@@ -24,11 +24,9 @@
 {"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-07-27T00:00:00+09:00","datePublished":"2022-07-27T00:00:00+09:00","description":"ブログのポストにはMarkdown形式を使用しているが、Markdownの画像リンクの貼り方ではまったので、記録しておく.","headline":"ブログページに画像のリンクを貼る","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/githubpages/2022/07/27/imagelink.html"},"url":"http://localhost:4000/githubpages/2022/07/27/imagelink.html"}</script>
 <!-- End Jekyll SEO tag -->
    
-    <!-- bootstrap 4.3.1 -->
+    <!-- bootstrap 4.1.3 -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
-
-    <link rel="stylesheet" href="/assets/css/style.css?v=f7ac7c1c0645ccfb2dd95b77e6eb0d0503c79b90">
+    <link rel="stylesheet" href="/assets/css/style.css?v=f8a6c3a79b982700891ef14fa439cc5bd8a6ba24">
   
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -51,6 +49,7 @@
 <!-- adsense -->    
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3863517147070995"
      crossorigin="anonymous"></script>
+     
 
 </head>
 
@@ -100,97 +99,43 @@
 </nav>
 
     <div class="wrapper">
-      
-      <header>
-
-
-
-      <!-- <header style="background-image: url('/images/githubpages/posts/2022-07-27-imagelink/thumbnail.png'); filter: transparent(70%);" > -->
+      <header class="post-header">
+        <!-- <header style="background-image: url('/images//thumbnail.png'); filter: transparent(70%);" > -->
         <h1 style="color:darkslategrey;"">ブログページに画像のリンクを貼る</h1>
 
         <!-- パンくずリスト -->
-        
+        <div>
   
-     
+    
+      
 
 
 
 
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-     <li class="breadcrumb-item"><i class="fa-solid fa-house"></i><a href=/>Home</a></li>
-    <li class="breadcrumb-item active" aria-current="page"><a href="/#githubpages">GitHub Pages</a></li>
-    <li class="breadcrumb-item active" aria-current="page">ブログページに画像のリンクを貼る</li>
-  </ol>
-</nav>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><i class="fa-solid fa-house"></i><a href="/">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page"><a href="/githubpages">GitHub Pages</a></li>
+      <li class="breadcrumb-item active" aria-current="page">ブログページに画像のリンクを貼る</li>
+    </ol>
+  </nav>
 
-     
+      
 
-        
-        
+</div>
+
+
         <p>ブログのポストにはMarkdown形式を使用しているが、Markdownの画像リンクの貼り方ではまったので、記録しておく. </p>
 
-
         
         
         
 
+         <!-- toc -->
         
 
-        
-
-        <p></p>
-        
-        <!-- toc -->
-        <div>
-          
-        </div>
-          
-      </header>
-      
-      
-      
-      <section>
-      <div>
-        <!-- ポストの投稿日の表示 -->
-        <i class="fas fa-calendar"></i>
-        27 Jul 2022  投稿
-      </div>
-      
-      
-      
-      <!-- minutes to read -->      
-      
-      <div class="minutes-to-read">
-  
-    <p>この記事は約1分で読めます</p>
-  
-</div>
-      
-
-      
-      
-      <!-- main content -->
-      <div class="main-content">
-        <p>ブログのポストにはMarkdown形式を使用しているが、Markdownの画像リンクの貼り方ではまったので、記録しておく.</p>
-
-<p>通常、画像のリンクは、<code class="language-plaintext highlighter-rouge">![](相対パス)</code>で記述するが、Jekyllの場合は<code class="language-plaintext highlighter-rouge">![](絶対パス)</code>となる.</p>
-
-<p>しかし、いちいち<code class="language-plaintext highlighter-rouge">![](http://tker-78.github.io/early-morn-prog/images/…)</code>と記述していたら手間がかかってしょうがないので、</p>
-
-<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">![](</span><span class="sx">{{site.url}}/{{site.baseurl}}/imageパス</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>の記述に簡略化する.</p>
-
-<p>_config.ymlにパスの記述は必要</p>
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">url</span><span class="pi">:</span> <span class="s">https://tker-78.github.io</span>
-<span class="na">baseurl</span><span class="pi">:</span> <span class="s">/early-morn-prog</span>
-</code></pre></div></div>
-
-      </div>
-      
-      <div class="next-previous">
+        <!-- next previous button -->
+        <div class="next-previous">
   
 
 
@@ -253,6 +198,49 @@
 
   	
 </div>   
+      </header>
+      
+      
+      
+      <section>
+      <div>
+        <!-- ポストの投稿日の表示 -->
+        <i class="fas fa-calendar"></i>
+        27 Jul 2022  投稿
+      </div>
+      
+      
+      
+      <!-- minutes to read -->      
+      
+      <div class="minutes-to-read">
+  
+    <p>この記事は約1分で読めます</p>
+  
+</div>
+
+      
+      
+      <!-- main content -->
+      <div class="main-content">
+        <p>ブログのポストにはMarkdown形式を使用しているが、Markdownの画像リンクの貼り方ではまったので、記録しておく.</p>
+
+<p>通常、画像のリンクは、<code class="language-plaintext highlighter-rouge">![](相対パス)</code>で記述するが、Jekyllの場合は<code class="language-plaintext highlighter-rouge">![](絶対パス)</code>となる.</p>
+
+<p>しかし、いちいち<code class="language-plaintext highlighter-rouge">![](http://tker-78.github.io/early-morn-prog/images/…)</code>と記述していたら手間がかかってしょうがないので、</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">![](</span><span class="sx">{{site.url}}/{{site.baseurl}}/imageパス</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>の記述に簡略化する.</p>
+
+<p>_config.ymlにパスの記述は必要</p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">url</span><span class="pi">:</span> <span class="s">https://tker-78.github.io</span>
+<span class="na">baseurl</span><span class="pi">:</span> <span class="s">/early-morn-prog</span>
+</code></pre></div></div>
+
+      </div>
+      
 
 
       <!-- DISQUSの導入  -->
@@ -287,14 +275,44 @@
     <h3>Today's NEWS</h3>
   </div>
 
-
+  
   <div class="news-container">
     <div class="news-image">
-      <a href="https://news.denfaminicogamer.jp/news/220826q"><img src="https://img-denfaminicogamer.com/wp-content/uploads/2022/08/ss_a95c08ee8efdc232aa00bf54bddec0f88fb7dfbd.1920x1080.jpg" alt="" />  </a>
+      <a href="https://www.youtube.com/watch?v=UOyJJQOdxpQ"><img src="https://i.ytimg.com/vi/UOyJJQOdxpQ/hqdefault.jpg" alt="" />  </a>
     </div>
     
     <div class="news-text stretched-link" >
-      <a href="https://news.denfaminicogamer.jp/news/220826q" >高速ローグライクFPS『Force Reboot』がSteamにて配信開始。『Post Void』や『ULTRAKILL』からインスピレーションを受けたローグライク作品 - 電ファミニコゲーマー</a>
+      <a href="https://www.youtube.com/watch?v=UOyJJQOdxpQ" >非常電源で冷却…ロシア軍占拠・ザポリージャ原発の電源喪失 NPT最終合意にも影響(2022年8月26日) - ANNnewsCH</a>
+    </div>
+  </div>
+  
+  <div class="news-container">
+    <div class="news-image">
+      <a href="https://akiba-pc.watch.impress.co.jp/docs/wakiba/find/1435289.html"><img src="https://akiba-pc.watch.impress.co.jp/img/ah/list/1435/289/asteam1.jpg" alt="" />  </a>
+    </div>
+    
+    <div class="news-text stretched-link" >
+      <a href="https://akiba-pc.watch.impress.co.jp/docs/wakiba/find/1435289.html" >話題の「Steam Deck」が秋葉原で展示スタート、人気の「AYANEO」シリーズとの比較も可能 - AKIBA PC Hotline!</a>
+    </div>
+  </div>
+  
+  <div class="news-container">
+    <div class="news-image">
+      <a href="https://doope.jp/2022/08129621.html"><img src="https://doope.jp/media/22q3/img9174_01.jpg" alt="" />  </a>
+    </div>
+    
+    <div class="news-text stretched-link" >
+      <a href="https://doope.jp/2022/08129621.html" >GOGがサイバーパンク2DアクションRPG「Dex」の期間限定無料配布を開始 - Doope</a>
+    </div>
+  </div>
+  
+  <div class="news-container">
+    <div class="news-image">
+      <a href="https://www.youtube.com/watch?v=vCRZ5ombRuA"><img src="https://i.ytimg.com/vi/vCRZ5ombRuA/maxresdefault.jpg" alt="" />  </a>
+    </div>
+    
+    <div class="news-text stretched-link" >
+      <a href="https://www.youtube.com/watch?v=vCRZ5ombRuA" >高槻女性殺害 養子の男が事件当日に結束バンドを東京都内で購入 事件に使われたものと同じか - 読売テレビニュース</a>
     </div>
   </div>
   
@@ -358,67 +376,13 @@
     </div>
   </div>
   
-  <div class="news-container">
-    <div class="news-image">
-      <a href="https://japanese.joins.com/JArticle/294837?sectcode=320&amp;servcode=300"><img src="//images.joins.com/ui_joins/japan19/profile_joongang_800.jpg" alt="" />  </a>
-    </div>
-    
-    <div class="news-text stretched-link" >
-      <a href="https://japanese.joins.com/JArticle/294837?sectcode=320&amp;servcode=300" >ヒョンデ、１０大自動車メーカーのうち５番目に気候変動危機に脆弱…日本メーカー３社が１～３位 - 中央日報</a>
-    </div>
-  </div>
-  
-  <div class="news-container">
-    <div class="news-image">
-      <a href="https://www.itmedia.co.jp/news/articles/2208/26/news114.html"><img src="https://image.itmedia.co.jp/news/articles/2208/26/cover_news114.jpg" alt="" />  </a>
-    </div>
-    
-    <div class="news-text stretched-link" >
-      <a href="https://www.itmedia.co.jp/news/articles/2208/26/news114.html" >今日はOutlookで障害？ Twitterで「つながらない」報告相次ぐ - ITmedia NEWS</a>
-    </div>
-  </div>
-  
-  <div class="news-container">
-    <div class="news-image">
-      <a href="https://gigazine.net/news/20220826-genshin-impact-anti-cheat-system-disable-antivirus/"><img src="https://i.gzn.jp/img/2022/08/26/genshin-impact-anti-cheat-system-disable-antivirus/00.png" alt="" />  </a>
-    </div>
-    
-    <div class="news-text stretched-link" >
-      <a href="https://gigazine.net/news/20220826-genshin-impact-anti-cheat-system-disable-antivirus/" >PC版「原神」のアンチチートシステムを逆手にとってアンチウイルスを無効にするランサムウェア攻撃が発見される、「原神」をインストールしていなくても標的に - GIGAZINE（ギガジン）</a>
-    </div>
-  </div>
-  
 </div>
 
       
-      
-
-
       </section>
-
-        <!-- <footer class="text-center bg-light ">
-  <nav class="footer-navigation">
-    <ul class="footer-navigation-list">
-      <li class="footer-navigation-item"><a href="/policy">Privacy Policy</a></li>
-      <li class="footer-navigation-item"><a href="/contact">Contact</a></li>
-      <li class="footer-navigation-item"><a href="/sitemap.xml">Sitemap</a></li>
-    </ul>
-    <p class="copyright">© 2022 早朝プログラマ All rights reserved.</p>
-  </nav>
-</footer>
- -->
-
-        <!--  -->
-        <!-- <p>This project is maintained by <a href="https://github.com/tker-78">tker-78</a></p> -->
-        <!--  -->
-        <!-- <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p> -->
-        
     </div>
-    <script src="/assets/js/scale.fix.js"</script>
-
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
 </html>
