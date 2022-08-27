@@ -53,8 +53,7 @@
          <!-- toc -->
         {% include toc.html html=content id="toc" class="inline-toc" ordered=true h_max=3 h_min=2 %}
 
-        <!-- next previous button -->
-        {% include next-previous.html %}   
+
       </header>
       
       
@@ -93,6 +92,9 @@
           {% include disqus.html %}
         </div>
       {% endif %}
+
+        <!-- next previous button -->
+        {% include next-previous.html %}   
 
       <!-- NEWS API -->
       {% include news.html %}
