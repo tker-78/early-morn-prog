@@ -9,5 +9,7 @@ response_body = req.read
 
 
 File.open("_data/news.json", "w") do |f|
-  f.write response_body
+  f.write response_body 
 end
+
+

@@ -15,8 +15,8 @@ PAGES.each do |p|
 
     it 'has only valid internal hyperlinks' do
       page.all(:css, 'a').each do |link|
-        next if link.text == '' || link[:href].match(/(http|\/\/).*/)
-        page.find(:xpath, link.path).click
+        next if link.text == '' || link[:href].match(/(http|\/\/).*/) 
+        page.find(:xpath, link.path).click 
         expect(page.status_code).to be 200
         visit p
       end
