@@ -317,7 +317,6 @@ PLATFORMS
 DEPENDENCIES
   capybara
   github-pages
-  guard
   guard-rspec
   jekyll
   jekyll-seo-tag
