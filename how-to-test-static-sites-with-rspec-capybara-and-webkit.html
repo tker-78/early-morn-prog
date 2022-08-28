@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>How to test static sites with RSpec, Capybara, and Webkit</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/syntax.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <!--<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">-->
+    <link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="/img/favicon-32x32.png" />
+    <link rel="alternate" type="application/rss+xml" title="Subscribe to new posts" href="/feed.xml" />
+
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<meta name="generator" content="Jekyll v4.0.1" />
+<meta property="og:title" content="How to test static sites with RSpec, Capybara, and Webkit" />
+<meta name="author" content="strzibny" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Automated tests are not only good for dynamic code. You can (and probably should) test your static web sites as well. Here is an example of me testing the Fedora Developer website using Ruby, RSpec and Capybara." />
+<meta property="og:description" content="Automated tests are not only good for dynamic code. You can (and probably should) test your static web sites as well. Here is an example of me testing the Fedora Developer website using Ruby, RSpec and Capybara." />
+<link rel="canonical" href="https://nts.strzibny.name/how-to-test-static-sites-with-rspec-capybara-and-webkit/" />
+<meta property="og:url" content="https://nts.strzibny.name/how-to-test-static-sites-with-rspec-capybara-and-webkit/" />
+<meta property="og:site_name" content="Notes to self" />
+<meta property="og:image" content="https://nts.strzibny.name/img/nts.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-02-24T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="https://nts.strzibny.name/img/nts.png" />
+<meta property="twitter:title" content="How to test static sites with RSpec, Capybara, and Webkit" />
+<meta name="twitter:site" content="@strzibnyj" />
+<meta name="twitter:creator" content="@strzibnyj" />
+<script type="application/ld+json">
+{"datePublished":"2020-02-24T00:00:00+00:00","image":"https://nts.strzibny.name/img/nts.png","author":{"@type":"Person","name":"strzibny"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://nts.strzibny.name/how-to-test-static-sites-with-rspec-capybara-and-webkit/"},"description":"Automated tests are not only good for dynamic code. You can (and probably should) test your static web sites as well. Here is an example of me testing the Fedora Developer website using Ruby, RSpec and Capybara.","@type":"BlogPosting","url":"https://nts.strzibny.name/how-to-test-static-sites-with-rspec-capybara-and-webkit/","headline":"How to test static sites with RSpec, Capybara, and Webkit","dateModified":"2020-02-24T00:00:00+00:00","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    
+      <script async defer data-domain="strzibny.name" src="https://plausible.strzibny.name/js/index.js"></script>
+    
+  </head>
+  <body>
+
+    <a id="icon-nav" title="Personal" href="https://strzibny.name/"></a>
+
+<!--
+    <div style="text-align: center; padding-top: 50px;">
+  <span style="background:yellow;">New: </span> <a style="background:yellow;text-decoration:none;border:0;color:black !important" href="https://deploymentfromscratch.com/?ref=top">My book pre-release &rarr;</a>
+</div>-->
+
+    <nav>
+      <a title="Notes to self by Josef Strzibny" href="/"><strong>/home/nts</strong></a>
+    </nav>
+
+    <h1><span>How to test static sites with RSpec, Capybara, and Webkit</span></h1>
+
+<section>
+  <article class="post">
+
+    <div class="post-meta-up">
+      <p>
+        <time datetime="">24 Feb 2020</time>
+      </p>
+    </div>
+
+    <p>Automated tests are not only good for dynamic code. You can (and probably should) test your static web sites as well. Here is an example of me testing the <a href="https://developer.fedoraproject.org/">Fedora Developer</a> website using Ruby, RSpec and Capybara.<!--more--></p>
+
+<p>First, let’s briefly stress out why the testing is really needed. Fedora Developer is statically built with <a href="/tag/jekyll">Jekyll</a> and the content itself is created by many contributors. As you can imagine, things can break pretty easily. It’s one thing to test the layout and things you are in control of, but another when you want to make sure that people are creating new content as expected.</p>
+
+<p>One of the things we want to make sure of is the correct internal linking of other pages. Not everybody immediately knows how to write a relative Markdown link for the website that is going to be generated later. Even as a reviewer I might be looking it up. Solution? Write tests and run them before the deployment of the new version of the website.</p>
+
+<p>Since Jekyll already implies that Ruby is installed and available, let’s write a Capybara/Webkit specs similarly as if we would test a Rails web application. In the <a href="https://github.com/developer-portal/website">website root</a> we add a new <code class="highlighter-rouge">spec</code> directory with the following <code class="highlighter-rouge">spec_helper.rb</code>:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># This spec needs rubygem-rack, rubygem-capybara and rubygem-rspec installed.</span>
+<span class="c1"># Run as `rspec spec/` in the project root directory.</span>
+
+<span class="nb">require</span> <span class="s1">'rack'</span>
+<span class="nb">require</span> <span class="s1">'capybara'</span>
+<span class="nb">require</span> <span class="s1">'capybara/dsl'</span>
+<span class="nb">require</span> <span class="s1">'capybara/session'</span>
+<span class="nb">require</span> <span class="s1">'capybara/rspec'</span>
+<span class="nb">require_relative</span> <span class="s1">'./shared_contexts.rb'</span>
+
+<span class="k">class</span> <span class="nc">JekyllSite</span>
+  <span class="nb">attr_reader</span> <span class="ss">:root</span><span class="p">,</span> <span class="ss">:server</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+    <span class="vi">@root</span> <span class="o">=</span> <span class="n">root</span>
+    <span class="vi">@server</span> <span class="o">=</span> <span class="no">Rack</span><span class="o">::</span><span class="no">File</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">call</span><span class="p">(</span><span class="n">env</span><span class="p">)</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="n">env</span><span class="p">[</span><span class="s1">'PATH_INFO'</span><span class="p">]</span>
+
+    <span class="c1"># Use index.html for / paths</span>
+    <span class="k">if</span> <span class="n">path</span> <span class="o">==</span> <span class="s1">'/'</span> <span class="o">&amp;&amp;</span> <span class="n">exists?</span><span class="p">(</span><span class="s1">'index.html'</span><span class="p">)</span>
+      <span class="n">env</span><span class="p">[</span><span class="s1">'PATH_INFO'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'/index.html'</span>
+    <span class="k">elsif</span> <span class="o">!</span><span class="n">exists?</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">exists?</span><span class="p">(</span><span class="n">path</span> <span class="o">+</span> <span class="s1">'.html'</span><span class="p">)</span>
+      <span class="n">env</span><span class="p">[</span><span class="s1">'PATH_INFO'</span><span class="p">]</span> <span class="o">+=</span> <span class="s1">'.html'</span>
+    <span class="k">end</span>
+
+    <span class="n">server</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="n">env</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">exists?</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+    <span class="no">File</span><span class="p">.</span><span class="nf">exist?</span><span class="p">(</span><span class="no">File</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">path</span><span class="p">))</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="c1"># Setup for Capybara to test Jekyll static files served by Rack</span>
+<span class="no">Capybara</span><span class="p">.</span><span class="nf">app</span> <span class="o">=</span> <span class="no">Rack</span><span class="o">::</span><span class="no">Builder</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
+  <span class="n">map</span> <span class="s1">'/'</span> <span class="k">do</span>
+    <span class="n">use</span> <span class="no">Rack</span><span class="o">::</span><span class="no">Lint</span>
+    <span class="n">run</span> <span class="no">JekyllSite</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="no">File</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="no">File</span><span class="p">.</span><span class="nf">dirname</span><span class="p">(</span><span class="kp">__FILE__</span><span class="p">),</span> <span class="s1">'..'</span><span class="p">,</span> <span class="s1">'_site'</span><span class="p">))</span>
+  <span class="k">end</span>
+<span class="k">end</span><span class="p">.</span><span class="nf">to_app</span>
+
+<span class="no">Capybara</span><span class="p">.</span><span class="nf">default_selector</span> <span class="o">=</span>  <span class="ss">:css</span>
+<span class="no">Capybara</span><span class="p">.</span><span class="nf">default_driver</span>   <span class="o">=</span>  <span class="ss">:rack_test</span>
+<span class="no">Capybara</span><span class="p">.</span><span class="nf">javascript_driver</span> <span class="o">=</span> <span class="ss">:webkit</span>
+
+<span class="no">RSpec</span><span class="p">.</span><span class="nf">configure</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+  <span class="n">config</span><span class="p">.</span><span class="nf">include</span> <span class="no">Capybara</span><span class="o">::</span><span class="no">DSL</span>
+
+  <span class="c1"># Make sure the static files are generated</span>
+  <span class="sb">`jekyll build`</span> <span class="k">unless</span> <span class="no">File</span><span class="p">.</span><span class="nf">directory?</span><span class="p">(</span><span class="s1">'_site'</span><span class="p">)</span>
+<span class="k">end</span>
+</code></pre></div></div>
+<p>What are we doing here you ask?</p>
+
+<ul>
+  <li>We are transforming our Jekyll site to be a Rack application (Rack is Ruby HTTP interface).</li>
+  <li>We are using <code class="highlighter-rouge">Rack::Builder</code> to create our Capybara application.</li>
+  <li>We are telling Capybara to use <code class="highlighter-rouge">:webkit</code> driver.</li>
+  <li>Finally we are configuring RSpec to simply use Capybara DSL (that we use in the actual tests).</li>
+</ul>
+
+<p>You might have noticed two more things.</p>
+
+<p>We are requiring shared context. Our shared context tests the header, search box, and footer that is present on every generated page. Here is the source:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># What every single page should contain</span>
+<span class="no">RSpec</span><span class="p">.</span><span class="nf">shared_examples_for</span> <span class="s1">'Page'</span> <span class="k">do</span>
+  <span class="n">it</span> <span class="s2">"has top-level menu"</span> <span class="k">do</span>
+    <span class="n">expect</span><span class="p">(</span><span class="n">page</span><span class="p">).</span><span class="nf">to</span> <span class="n">have_css</span><span class="p">(</span><span class="s2">"#logo-col a[href~='/']"</span><span class="p">)</span>
+    <span class="n">expect</span><span class="p">(</span><span class="n">page</span><span class="p">).</span><span class="nf">to</span> <span class="n">have_link</span><span class="p">(</span><span class="s2">"Start a project"</span><span class="p">,</span> <span class="ss">href: </span><span class="s1">'/start.html'</span><span class="p">)</span>
+    <span class="n">expect</span><span class="p">(</span><span class="n">page</span><span class="p">).</span><span class="nf">to</span> <span class="n">have_link</span><span class="p">(</span><span class="s2">"Get tools"</span><span class="p">,</span> <span class="ss">href: </span><span class="s1">'/tools.html'</span><span class="p">)</span>
+    <span class="n">expect</span><span class="p">(</span><span class="n">page</span><span class="p">).</span><span class="nf">to</span> <span class="n">have_link</span><span class="p">(</span><span class="s2">"Languages &amp; databases"</span><span class="p">,</span> <span class="ss">href: </span><span class="s1">'/tech.html'</span><span class="p">)</span>
+    <span class="n">expect</span><span class="p">(</span><span class="n">page</span><span class="p">).</span><span class="nf">to</span> <span class="n">have_link</span><span class="p">(</span><span class="s2">"Deploy and distribute"</span><span class="p">,</span> <span class="ss">href: </span><span class="s1">'/deployment.html'</span><span class="p">)</span>
+    <span class="n">expect</span><span class="p">(</span><span class="n">page</span><span class="p">).</span><span class="nf">to</span> <span class="n">have_css</span><span class="p">(</span><span class="s2">"ul.nav li"</span><span class="p">,</span> <span class="ss">count: </span><span class="mi">4</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="n">it</span> <span class="s2">"has footer"</span> <span class="k">do</span>
+    <span class="n">expect</span><span class="p">(</span><span class="n">page</span><span class="p">).</span><span class="nf">to</span> <span class="n">have_css</span><span class="p">(</span><span class="s2">".footer"</span><span class="p">)</span>
+
+    <span class="c1"># 4 sections: About, Download, Support, Join</span>
+    <span class="n">expect</span><span class="p">(</span><span class="n">page</span><span class="p">).</span><span class="nf">to</span> <span class="n">have_css</span><span class="p">(</span><span class="s2">".footer h3.widget-title"</span><span class="p">,</span> <span class="ss">count: </span><span class="mi">4</span><span class="p">)</span>
+
+    <span class="c1"># Footer links</span>
+    <span class="n">expect</span><span class="p">(</span><span class="n">page</span><span class="p">).</span><span class="nf">to</span> <span class="n">have_link</span><span class="p">(</span><span class="s2">"About Developer Portal"</span><span class="p">,</span> <span class="ss">href: </span><span class="s1">'/about.html'</span><span class="p">)</span>
+    <span class="n">expect</span><span class="p">(</span><span class="n">page</span><span class="p">).</span><span class="nf">to</span> <span class="n">have_link</span><span class="p">(</span><span class="s2">"Fedora Magazine"</span><span class="p">,</span> <span class="ss">href: </span><span class="s1">'https://fedoramagazine.org'</span><span class="p">)</span>
+    <span class="n">expect</span><span class="p">(</span><span class="n">page</span><span class="p">).</span><span class="nf">to</span> <span class="n">have_link</span><span class="p">(</span><span class="s2">"Torrent Downloads"</span><span class="p">,</span> <span class="ss">href: </span><span class="s1">'https://torrents.fedoraproject.org'</span><span class="p">)</span>
+    <span class="n">expect</span><span class="p">(</span><span class="n">page</span><span class="p">).</span><span class="nf">to</span> <span class="n">have_link</span><span class="p">(</span><span class="s2">"Forums"</span><span class="p">,</span> <span class="ss">href: </span><span class="s1">'https://fedoraforum.org/'</span><span class="p">)</span>
+    <span class="n">expect</span><span class="p">(</span><span class="n">page</span><span class="p">).</span><span class="nf">to</span> <span class="n">have_link</span><span class="p">(</span><span class="s2">"Planet Fedora"</span><span class="p">,</span> <span class="ss">href: </span><span class="s1">'http://fedoraplanet.org'</span><span class="p">)</span>
+    <span class="n">expect</span><span class="p">(</span><span class="n">page</span><span class="p">).</span><span class="nf">to</span> <span class="n">have_link</span><span class="p">(</span><span class="s2">"Fedora Community"</span><span class="p">,</span> <span class="ss">href: </span><span class="s1">'https://fedoracommunity.org/'</span><span class="p">)</span>
+    <span class="n">expect</span><span class="p">(</span><span class="n">page</span><span class="p">).</span><span class="nf">to</span> <span class="n">have_css</span><span class="p">(</span><span class="s2">".footer a"</span><span class="p">,</span> <span class="ss">count: </span><span class="mi">27</span><span class="p">)</span>
+
+    <span class="n">expect</span><span class="p">(</span><span class="n">page</span><span class="p">).</span><span class="nf">to</span> <span class="n">have_css</span><span class="p">(</span><span class="s2">".footer p.copy"</span><span class="p">,</span> <span class="ss">text: </span><span class="sr">/© [0-9]+ Red Hat, Inc. and others./</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="c1"># Search page does not contain form#search</span>
+<span class="no">RSpec</span><span class="p">.</span><span class="nf">shared_examples_for</span> <span class="s1">'Page with search box'</span> <span class="k">do</span>
+  <span class="n">it</span> <span class="s2">"has a search box next to the top-level navigation"</span> <span class="k">do</span>
+    <span class="n">expect</span><span class="p">(</span><span class="n">page</span><span class="p">).</span><span class="nf">to</span> <span class="n">have_css</span><span class="p">(</span><span class="s2">"form#search"</span><span class="p">)</span>
+    <span class="n">expect</span><span class="p">(</span><span class="n">page</span><span class="p">).</span><span class="nf">to</span> <span class="n">have_css</span><span class="p">(</span><span class="s2">"form#search input"</span><span class="p">)</span>
+    <span class="n">expect</span><span class="p">(</span><span class="n">page</span><span class="p">).</span><span class="nf">to</span> <span class="n">have_css</span><span class="p">(</span><span class="s2">"form#search button"</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>We are also making sure to run <code class="highlighter-rouge">jekyll build</code> to generate the site (we expect and work with standard Jekyll <code class="highlighter-rouge">_site</code> directory).</p>
+
+<p>With all of this setup we can write a regular Capybara test:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'spec_helper'</span>
+
+<span class="c1"># Array of all generated pages</span>
+<span class="n">site</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="no">File</span><span class="p">.</span><span class="nf">dirname</span><span class="p">(</span><span class="kp">__FILE__</span><span class="p">),</span> <span class="s1">'..'</span><span class="p">,</span> <span class="s1">'_site'</span><span class="p">,</span> <span class="s1">'**'</span><span class="p">,</span> <span class="s1">'*.html'</span><span class="p">)</span>
+<span class="no">PAGES</span> <span class="o">=</span> <span class="no">Dir</span><span class="p">.</span><span class="nf">glob</span><span class="p">(</span><span class="n">site</span><span class="p">).</span><span class="nf">map</span><span class="p">{</span> <span class="o">|</span><span class="nb">p</span><span class="o">|</span> <span class="nb">p</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="sr">/[^_]+\/_site(.*)/</span><span class="p">,</span> <span class="s1">'\\1'</span><span class="p">)</span> <span class="p">}</span>
+
+<span class="no">PAGES</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="nb">p</span><span class="o">|</span>
+  <span class="n">describe</span> <span class="nb">p</span> <span class="k">do</span>
+    <span class="n">it_behaves_like</span> <span class="s1">'Page'</span>
+    <span class="n">it_behaves_like</span> <span class="s1">'Page with search box'</span> <span class="k">unless</span> <span class="nb">p</span> <span class="o">==</span> <span class="s1">'/search.html'</span>
+
+    <span class="n">before</span> <span class="ss">:each</span> <span class="k">do</span>
+      <span class="n">visit</span> <span class="nb">p</span>
+    <span class="k">end</span>
+
+    <span class="n">it</span> <span class="s1">'has only valid internal hyperlinks'</span> <span class="k">do</span>
+      <span class="n">page</span><span class="p">.</span><span class="nf">all</span><span class="p">(</span><span class="ss">:css</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">).</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">link</span><span class="o">|</span>
+        <span class="k">next</span> <span class="k">if</span> <span class="n">link</span><span class="p">.</span><span class="nf">text</span> <span class="o">==</span> <span class="s1">''</span> <span class="o">||</span> <span class="n">link</span><span class="p">[</span><span class="ss">:href</span><span class="p">].</span><span class="nf">match</span><span class="p">(</span><span class="sr">/(http|\/\/).*/</span><span class="p">)</span>
+        <span class="n">page</span><span class="p">.</span><span class="nf">find</span><span class="p">(</span><span class="ss">:xpath</span><span class="p">,</span> <span class="n">link</span><span class="p">.</span><span class="nf">path</span><span class="p">).</span><span class="nf">click</span>
+        <span class="n">expect</span><span class="p">(</span><span class="n">page</span><span class="p">.</span><span class="nf">status_code</span><span class="p">).</span><span class="nf">to</span> <span class="n">be</span><span class="p">(</span><span class="mi">200</span><span class="p">),</span> <span class="s2">"expected link '</span><span class="si">#{</span><span class="n">link</span><span class="p">.</span><span class="nf">text</span><span class="si">}</span><span class="s2">' to work"</span>
+        <span class="n">visit</span> <span class="nb">p</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+<p>This test will iterate over all our pages, visit them, use our shared context thanks to <code class="highlighter-rouge">it_behaves_like</code> call, and finally run any further tests.</p>
+
+<p>In the test example above all the relative links found on the page will be visited by Capybara (we are clicking on them with <code class="highlighter-rouge">click()</code>). If such page does not exist, we fail our RSpec test with expectation.</p>
+
+<p>After all of this in place, the idea is to just run <code class="highlighter-rouge">rspec spec</code> in the project root directory:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>rspec spec
+............................................................................................................................................................................................................................................................................................F...............F.......F...................
+
+Failures:
+
+  1<span class="o">)</span> /tools/docker/about.html has only valid internal hyperlinks
+     Failure/Error: expect<span class="o">(</span>page.status_code<span class="o">)</span>.to be<span class="o">(</span>200<span class="o">)</span>, <span class="s2">"expected link '#{link.text}' to work"</span>
+       expected <span class="nb">link</span> <span class="s1">'configuring Docker'</span> to work
+     <span class="c"># ./spec/pages_spec.rb:20:in `block (4 levels) in &amp;lt;top (required)&gt;'</span>
+     <span class="c"># ./spec/pages_spec.rb:17:in `block (3 levels) in &amp;lt;top (required)&gt;'</span>
+
+  2<span class="o">)</span> /tools/docker/compose.html has only valid internal hyperlinks
+     Failure/Error: expect<span class="o">(</span>page.status_code<span class="o">)</span>.to be<span class="o">(</span>200<span class="o">)</span>, <span class="s2">"expected link '#{link.text}' to work"</span>
+       expected <span class="nb">link</span> <span class="s1">'Getting started with Docker on Fedora'</span> to work
+     <span class="c"># ./spec/pages_spec.rb:20:in `block (4 levels) in &amp;lt;top (required)&gt;'</span>
+     <span class="c"># ./spec/pages_spec.rb:17:in `block (3 levels) in &amp;lt;top (required)&gt;'</span>
+
+  3<span class="o">)</span> /tools/vagrant/about.html has only valid internal hyperlinks
+     Failure/Error: expect<span class="o">(</span>page.status_code<span class="o">)</span>.to be<span class="o">(</span>200<span class="o">)</span>, <span class="s2">"expected link '#{link.text}' to work"</span>
+       expected <span class="nb">link</span> <span class="s1">'Vagrant with libvirt'</span> to work
+     <span class="c"># ./spec/pages_spec.rb:20:in `block (4 levels) in &amp;lt;top (required)&gt;'</span>
+     <span class="c"># ./spec/pages_spec.rb:17:in `block (3 levels) in &amp;lt;top (required)&gt;'</span>
+
+Finished <span class="k">in </span>7.8 seconds <span class="o">(</span>files took 0.36521 seconds to load<span class="o">)</span>
+328 examples, 3 failures
+</code></pre></div></div>
+
+<p>Oh my, links are broken! Let’s fix them first…</p>
+
+<p>On the Fedora Developer website this call is part of the <a href="https://github.com/developer-portal/website/blob/master/deploy.sh">deploy script</a>:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>./deploy.sh
+Running specs...
+........................................................................................................................................................................................................................................................................................................................................
+
+Finished <span class="k">in </span>8.17 seconds <span class="o">(</span>files took 0.37417 seconds to load<span class="o">)</span>
+328 examples, 0 failures
+
+Checking dependencies...
+ruby-2.2.3-44.fc22.x86_64
+rubygem-liquid-3.0.1-1.fc22.noarch
+rubygem-actionview-4.2.0-2.fc22.noarch
+Uploading site from _site/, check that the content is current
+about.html                                                            100% 9713     9.5KB/s   00:00
+about.md                                                              100%    0     0.0KB/s   00:00
+...
+</code></pre></div></div>
+
+<p>Trust me, this feels so much better. Finding the issues before the site is deployed is important both for your visitors and your good night sleeps!</p>
+
+
+    <!-- Post Content End -->
+
+    <div class="post-meta-down">
+      
+        <a href="/tag/ruby/" class="post-tag">ruby</a>
+      
+        <a href="/tag/jekyll/" class="post-tag">jekyll</a>
+      
+        <a href="/tag/rspec/" class="post-tag">rspec</a>
+      
+        <a href="/tag/testing/" class="post-tag">testing</a>
+      
+        <a href="/tag/howto/" class="post-tag">howto</a>
+      
+    </div>
+
+    <div class="twitter" style="clear: both;">
+      Any comments? Write me a direct message at
+        <a href="https://twitter.com/strzibnyj">@strzibnyj.</a>
+
+      <p>
+        <a class="twitter-link" title="Follow me on Twitter" href="https://strzibny.name/strzibnyj"><img src="/img/twitter.png" /></a>
+      </p>
+    </div>
+
+    
+
+    <div class="book">
+      <h4>&larr; IT'S OUT NOW</h4>
+      <a class="book-link" title="Deploy Rails applications" href="https://deploymentfromscratch.com/?ref=down"><img src="/img/cover_160.jpg" /></a>
+      <p>
+        I wrote a complete guide on web application deployment. Ruby with Puma, Python with Gunicorn, NGINX, PostgreSQL, Redis, networking, processes, systemd, backups, and all your usual suspects.
+      </p>
+      <p>
+        <a href="https://deploymentfromscratch.com/?ref=open">More &rarr;</a>
+      </p>
+    </div>
+    <div style="clear: both;" />
+  </article>
+</section>
+
+
+<!--
+    <footer>
+      <p>By Josef Strzibny</p>
+      <a href="/about">About.</a>
+      <a title="RSS feed" href="/feed.xml">RSS.</a>
+    </footer>
+
+    <div style="height:55px;"></div>
+    <div id="sticky">
+      <p>
+        <a href="https://deploymentfromscratch.com/?rel=sticky">Deployment from Scratch &rarr;</a>
+      </p>
+    </div>
+    -->
+  </body>
+</html>

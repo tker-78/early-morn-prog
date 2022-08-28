@@ -1,7 +1,8 @@
 
 # 対象ページを配列に格納
 site = File.join(File.dirname(__FILE__), '..', '_site', '**', '*.html')
-PAGES = Dir.glob(site).map { |p| p.gsub(/[^_]+\/_site(.*)/, '\\1') }
+PAGES = Dir.glob(site).map { |p| p.gsub(/[^_]+\/_site(.*)/, '\\1') } # マッチした部分文字列との置き換え
+
 
 PAGES.each do |p|
   describe p do

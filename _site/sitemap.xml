@@ -216,4 +216,8 @@
 <url>
 <loc>http://localhost:4000/storage/</loc>
 </url>
+<url>
+<loc>http://localhost:4000/how-to-test-static-sites-with-rspec-capybara-and-webkit.html</loc>
+<lastmod>2022-08-28T10:27:22+09:00</lastmod>
+</url>
 </urlset>
