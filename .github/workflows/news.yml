@@ -25,7 +25,7 @@ jobs:
     - name: Bundle
       run: bundle install
     - name: Update NEWS
-      run: ruby ${{ github.workspace }}/_plugins/news.rb
+      run: ruby ${{ github.workspace }}/lib/news.rb
     - name: Commit files
       run: |
         git config --global user.email "kktak02@gmail.com"
