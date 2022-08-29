@@ -14,13 +14,14 @@ require 'date'
 
 
 class News
-  attr_accessor :name, :type, :category, :country, :start_date, :end_date, :url
+  attr_accessor :name, :type, :category, :country, :start_date, :end_date, :url, :q
 
-  def initialize(name='', type='', category='', country='' )
+  def initialize(name='', type='', category='', country='', q='')
     @name = name
     @type = type
     @category = category
     @country = country
+    @q = q
     @start_date = start_date
     @end_date = end_date
     @url = url
@@ -45,10 +46,16 @@ class News
       url_country = ''
     end
 
+    if q != ''
+      url_q = "q=#{q}&"
+    else
+      url_q = ''
+    end
+
     url_from = "from=#{start_date}&"
     url_to = "to=#{ end_date }&"
     url_sort = "sortBy=popularity&"
-    url = head + url_type + url_category + url_country + url_from + url_to + url_sort + api_key
+    url = head + url_type + url_category + url_country + url_q + url_from + url_to + url_sort + api_key
 
   end
 
@@ -75,4 +82,6 @@ end
 technology = News.new("technology", "top-headlines", "technology", "jp")
 technology.save
 
-
+english = News.new("english", "everything", "", "", "english")
+puts english.url
+english.save
