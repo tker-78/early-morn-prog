@@ -83,5 +83,4 @@ technology = News.new("technology", "top-headlines", "technology", "jp")
 technology.save
 
 english = News.new("english", "everything", "", "", "english")
-puts english.url
 english.save

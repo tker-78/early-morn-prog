@@ -1,5 +1,6 @@
 ---
 title: 今日の単語
+news: english
 ---
 
 

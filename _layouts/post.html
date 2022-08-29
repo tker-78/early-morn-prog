@@ -104,7 +104,11 @@
 
 
       <!-- NEWS -->
-      {% include news_tech.html %}
+      {% if page.categories[0] == 'githubpages' %}
+        {% include news_tech.html %}
+      {% elsif page.categories[0] == 'english' %}
+        {% include news_english.html %}
+      {% endif %}
 
 
 
