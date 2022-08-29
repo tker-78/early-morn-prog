@@ -29,11 +29,12 @@ RSpec.describe News do
 
   context "url for blank category" do
     it 'has correct url' do
-      expect(news_blank_category.url).to eq "https://newsapi.org/v2/top-headlines&country=jp&from=#{news.start_date}&to=#{news.end_date}&sortBy=popularity&apiKey=b494dadbf4f84d61ba5535455e31b7c5"
+      expect(news_blank_category.url).to eq "https://newsapi.org/v2/top-headlines?country=jp&from=#{news.start_date}&to=#{news.end_date}&sortBy=popularity&apiKey=b494dadbf4f84d61ba5535455e31b7c5"
     end
   end
 
 end
+
 
 
 

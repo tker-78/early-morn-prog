@@ -27,11 +27,29 @@ class News
   end
 
   def url
-    if category == (nil || '')
-      url = "https://newsapi.org/v2/#{type}&country=#{country}&from=#{start_date}&to=#{ end_date }&sortBy=popularity&apiKey=b494dadbf4f84d61ba5535455e31b7c5"
+    head = "https://newsapi.org/v2/"
+    api_key = "apiKey=b494dadbf4f84d61ba5535455e31b7c5"
+
+    url_type = "#{type}?"
+    # url_q = "&q=#{q}" if q
+
+    if category != ''
+      url_category = "category=#{category}&"
     else
-      url = "https://newsapi.org/v2/#{type}?category=#{category}&country=#{country}&from=#{start_date}&to=#{ end_date }&sortBy=popularity&apiKey=b494dadbf4f84d61ba5535455e31b7c5"
+      url_category = ''
     end
+
+    if country != ''
+      url_country = "country=#{country}&"
+    else
+      url_country = ''
+    end
+
+    url_from = "from=#{start_date}&"
+    url_to = "to=#{ end_date }&"
+    url_sort = "sortBy=popularity&"
+    url = head + url_type + url_category + url_country + url_from + url_to + url_sort + api_key
+
   end
 
   def start_date
@@ -56,4 +74,5 @@ end
 
 technology = News.new("technology", "top-headlines", "technology", "jp")
 technology.save
+
 
