@@ -2,17 +2,6 @@ require 'open-uri'
 require 'json'
 require 'date'
 
-# today = Date.today
-# url = "https://newsapi.org/v2/top-headlines?category=technology&country=jp&from=#{ (today - 7 ).to_s }&to=#{ today.to_s }&sortBy=popularity&apiKey=b494dadbf4f84d61ba5535455e31b7c5"
-# req = open(url)
-# response_body = req.read
-
-
-# File.open("_data/news.json", "w") do |f|
-#   f.write response_body 
-# end
-
-
 class News
   attr_accessor :name, :type, :category, :country, :start_date, :end_date, :url, :q
 
@@ -56,12 +45,12 @@ class News
     url_to = "to=#{ end_date }&"
     url_sort = "sortBy=popularity&"
     url = head + url_type + url_category + url_country + url_q + url_from + url_to + url_sort + api_key
-
+    URI.encode(url)
   end
 
   def start_date
     today = Date.today
-    (today -7).to_s
+    (today - 3).to_s
   end
 
   def end_date
@@ -84,3 +73,7 @@ technology.save
 
 english = News.new("english", "everything", "", "", "english")
 english.save
+
+
+ap = News.new("ap", "everything", "", "", "応用情報技術者試験")
+ap.save

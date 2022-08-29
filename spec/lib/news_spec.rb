@@ -13,12 +13,12 @@ RSpec.describe News do
   end
 
   it 'has correct date' do
-    expect(News.new.start_date).to eq (today - 7 ).to_s
+    expect(News.new.start_date).to eq (today - 3 ).to_s
     expect(News.new.end_date).to eq today.to_s
   end
 
   it 'can save json data' do
-    pending 
+    expect(open(news.url)).to be_truthy
   end
 
   context "url for technology" do
