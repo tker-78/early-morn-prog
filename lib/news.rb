@@ -74,6 +74,5 @@ technology.save
 english = News.new("english", "everything", "", "", "english")
 english.save
 
-
 ap = News.new("ap", "everything", "", "", "応用情報技術者試験")
 ap.save
