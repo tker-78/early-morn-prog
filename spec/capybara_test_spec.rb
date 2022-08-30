@@ -21,6 +21,8 @@ PAGES.each do |p|
         visit p
       end
     end
+
   end
 end
+
 

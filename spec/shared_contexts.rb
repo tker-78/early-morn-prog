@@ -1,6 +1,8 @@
 # What every single page should contain
 RSpec.shared_examples_for 'Post' do
   it "has top-level menu" do
+    expect(page).to have_css("nav")
+
     # expect(page).to have_css("#logo-col a[href~='/']")
     # expect(page).to have_link("Start a project", href: '/start.html')
     # expect(page).to have_link("Get tools", href: '/tools.html')
