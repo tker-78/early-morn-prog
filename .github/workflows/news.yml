@@ -2,7 +2,7 @@ name: Update NEWS
 
 on:
   schedule:
-    - cron: '45 */3 * * *'
+    - cron: '45 0,6,12,18 * * *'
 
 
 jobs:
