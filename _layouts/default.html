@@ -73,6 +73,7 @@
                 <li class="menu-navigation-list-item"><a href="#english">English</a></li>
                 <li class="menu-navigation-list-item"><a href="#ap">応用情報技術者試験</a></li>
                 <li class="menu-navigation-list-item"><a href="#sql">SQL</a></li>
+                <li class="menu-navigation-list-item"><a href="#js">Javascriptの基本</a></li>
               </ul>
             </nav>
 
@@ -137,7 +138,7 @@
               <ol class="menu-category-list has-images">
 
               {% assign cat = "sql" %}
-              {% for post in site.categories.sql limit: 6%} 
+              {% for post in site.categories[cat] limit: 6%} 
                 {% include display_posts.html %}
               {% endfor %}
               </ol>
@@ -148,7 +149,26 @@
                 {% endif %}
               </div>
             </div>
+
+            <div id="js" class="menu-category">
+              <h3 class="menu-category-name">Javascript</h3>
+              <p>Javascriptの基本</p>
+              <ol class="menu-category-list has-images">
+
+              {% assign cat = "js" %}
+              {% for post in site.categories[cat] limit: 6%} 
+                {% include display_posts.html %}
+              {% endfor %}
+              </ol>
+
+              <div class="show-more">
+                {% if site.categories[cat].size > 6 %}
+                  <a href="/{{ cat }}" class="btn btn-info btn-sm" style="max-width: 45%;"> Show More </a>
+                {% endif %}
+              </div>
+            </div>  
           </article>
+
 
           
         </section>
