@@ -1,0 +1,17 @@
+<div class="news">
+  <div class="news-title">
+    <h3>今日のニュース</h3>
+  </div>
+
+  {% for article in site.data.js.articles limit: 10 %}
+  <div class="news-container">
+    <div class="news-image">
+      <a href="{{ article.url }}"><img src="{{ article.urlToImage }}" alt="" /></a>
+    </div>
+    
+    <div class="news-text" >
+      <a href="{{article.url }}" >{{ article.title }}</a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
