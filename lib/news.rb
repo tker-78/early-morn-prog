@@ -62,10 +62,21 @@ class News
   def save
     req = open(url)
     response_body = req.read
+    encoded = response_body.encode(Encoding.find('ASCII'), encoding_options)
     File.open("_data/#{name}.json", "w") do |f|
-      f.write response_body
+      f.write encoded
     end
   end
+
+  def encoding_options
+    {
+        invalid: :replace,
+        undef: :replace,
+        replace: '',
+        universal_newline: true
+    }
+  end
+
 end
 
 technology = News.new("technology", "top-headlines", "technology", "jp")
@@ -77,5 +88,5 @@ english.save
 ap = News.new("ap", "everything", "", "", "プログラミング")
 ap.save
 
-# js = News.new("js", "everything", "", "", "JavaScript&プログラミング")
-# js.save
+js = News.new("js", "everything", "", "", "Vue.js")
+js.save
