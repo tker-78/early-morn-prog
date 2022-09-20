@@ -21,7 +21,7 @@ description: イベントリスナーとは、イベントにアクションを�
 
     const number = document.querySelector("#number");
     const plusBtn = document.querySelector("#plus");
-    const minusBtn = document.querySelector("#minus);
+    const minusBtn = document.querySelector("#minus");
 
     plusBtn.addEventListener("click", (e) => {
       count++;
