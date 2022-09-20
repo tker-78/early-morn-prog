@@ -4,23 +4,23 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Javascript training</title>
-  <script src="./training.js"></script>
+  <title>Document</title>
 </head>
 <body>
-  <div id="test">
-    <span>Hello, World!</span>
+  <div>
+    <span id="pressedKey">Press something key you want.</span>
   </div>
 
-  <script type="module" >
-    const element = document.querySelector("#test");
-    console.log(element.innerHTML);
-
-    setTimeout(() => {
-      element.innerHTML = "<h1>Changed</h1>";
-    }, 3000);
+  <script>
+    let pressedKey = document.querySelector("#pressedKey");
+    document.body.addEventListener("keypress", (e) => {
+      if (pressedKey.textContent == "Press something key you want.") {
+        pressedKey.textContent = ""
+        pressedKey.textContent += e.key
+      }else{
+        pressedKey.textContent += e.key
+      }
+    })
   </script>
-
-
 </body>
 </html>
