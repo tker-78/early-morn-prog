@@ -7,20 +7,31 @@
   <title>Document</title>
 </head>
 <body>
-  <div>
-    <span id="pressedKey">Press something key you want.</span>
-  </div>
-
   <script>
-    let pressedKey = document.querySelector("#pressedKey");
-    document.body.addEventListener("keypress", (e) => {
-      if (pressedKey.textContent == "Press something key you want.") {
-        pressedKey.textContent = ""
-        pressedKey.textContent += e.key
-      }else{
-        pressedKey.textContent += e.key
-      }
+    // 2秒後にresolveすることを約束するオブジェクト
+    const prom = new Promise((resolve) => {
+      setTimeout(() => {
+        resolve("resolveしました"), 2000
+      })
     })
+
+    function myFunc() {
+      const value = prom; //promの返り値は"resolveしました"
+
+      console.log(value); //Promise {status: "pending"}. なぜなら、promを呼び出して2秒経たないとresolveされないから
+    }
+
+    myFunc();
+
+    async function nextFunc() {
+      const value = await prom;
+      console.log(value);
+    }
+
+    nextFunc();
+
+
+
   </script>
 </body>
 </html>
