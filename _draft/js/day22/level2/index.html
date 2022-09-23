@@ -7,6 +7,68 @@
   <title>Document</title>
 </head>
 <body>
-  
+  <h1>WORLD COUNTRIES LIST</h1>
+  <strong></strong>
+
+  <p>30DaysOfJavaScript</p>
+
+  <script>
+
+    // h1
+    const h1 = document.querySelector('h1')
+    h1.style.textAlign = 'center';
+    h1.style.marginLeft = '80px';
+    h1.style.width = '60%';
+    h1.style.fontFamily = 'courier';
+
+
+    // p 
+    const h2 = document.querySelector('p')
+    h2.style.textAlign = 'center';
+    h2.style.marginLeft = '80px';
+    h2.style.width = '60%';
+
+    let div = document.createElement('div')
+    div.className = 'countries'
+
+
+    document.body.append(div)
+
+    const countries = document.querySelector('.countries')
+    countries.style.display = 'grid';
+    countries.style.gridTemplateColumns = '1fr 1fr 1fr 1fr 1fr 1fr'
+    countries.style.margin = '30px 60px';
+    countries.style.width = '60%';
+
+
+    const url = 'https://restcountries.com/v2/all'
+    fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      let countryElm
+      for(country of data) {
+        countryElm = document.createElement('div')
+        countryElm.className = 'country'
+        countryElm.textContent = country.name
+        countryElm.style.margin = '5px 5px';
+        countryElm.style.padding = '20px 15px';
+        countryElm.style.textAlign = 'center';
+        countryElm.style.border = 'solid 1px #ddd';
+        countryElm.style.borderRadius = '3px';
+        countryElm.style.height = '100px';
+        countryElm.style.width = '100px';
+        
+        div.append(countryElm)
+      }
+    
+ 
+
+    })
+    .catch( error => console.error(error))
+
+
+
+  </script>
+
 </body>
 </html>
