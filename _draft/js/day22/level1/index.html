@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Number Generator</h1>
+  <h2>30DaysOfJavaScript</h2>
+  <p>Auther: tker-78</p>
+
+  <script>
+    //h1
+    const h1 = document.querySelector('h1')
+    h1.style.textAlign = 'center';
+    h1.style.fontFamily = 'courier';
+    h1.style.marginBottom = '0';
+
+
+    //h2
+    const h2 = document.querySelector('h2')
+
+    h2.style.textAlign = 'center';
+    h2.style.textDecoration = 'underline';
+    h2.style.fontSize = '18px';
+    h2.style.marginBottom = '0';
+
+
+    //p
+
+    const p = document.querySelector('p')
+    p.style.textAlign = 'center';
+    p.style.marginTop = '0';
+    p.style.textDecoration = 'underline';
+
+    //p(main content)
+    let numTile = document.createElement('div')
+    numTile.className = 'numTile'
+    document.body.append(numTile)
+
+    const div = document.querySelector('.numTile')
+    div.style.display = 'grid';
+    div.style.gridTemplateColumns = '1fr 1fr 1fr 1fr 1fr 1fr'; 
+    div.style.margin = '20px 300px';
+    div.style.justifyContent = 'center';
+
+    let num
+    for(let i = 0; i < 102; i++){
+      num = document.createElement('div')
+      num.className = 'num'
+      num.textContent = i
+      num.style.textAlign = 'center';
+      num.style.margin = '3px 3px';
+      num.style.padding = '30px 60px';
+      num.style.color = 'white';
+      num.style.fontSize = '30px';
+
+      const checkPrime = (number) => {
+        if (number == 0) {
+          return false
+        }else if (number == 1) {
+          return false
+        }else if (number == 2) {
+          return true
+        }else{
+          for(let i = 2; i < number; i++){
+            if(number % i == 0) return false
+            if(i + 1 == number) return true
+          }
+        }
+      }
+
+      if (checkPrime(i) == true) {
+        num.style.background = '#f44'
+      }else if(i % 2 == 0) {
+        num.style.background = '#0c8'
+      } else {
+        num.style.background = '#dd0'
+      }
+
+
+
+      numTile.appendChild(num)
+    }
+
+
+  </script>
+</body>
+</html>
