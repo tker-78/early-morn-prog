@@ -36,8 +36,7 @@
       <header class="post-header">
         <h1 style="color:darkslategrey;"">{{ page.title }}</h1>
 
-        <!-- パンくずリスト -->
-        {% include breadcrumbs.html %}
+
 
         <p>{{ page.description }}</p>
 
@@ -55,6 +54,9 @@
          <div class="toc">
           {% include toc.html html=content id="toc" class="inline-toc" ordered=true h_max=3 h_min=2 %}
          </div>
+        
+        <!-- パンくずリスト -->
+        {% include breadcrumbs.html %}
 
         <!-- next previous button -->
         {% include next-previous.html %}   
