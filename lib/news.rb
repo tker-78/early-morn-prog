@@ -3,9 +3,9 @@ require 'json'
 require 'date'
 
 class News
-  attr_accessor :name, :type, :category, :country, :start_date, :end_date, :url, :q
+  attr_accessor :name, :type, :category, :country, :start_date, :end_date, :url, :q, :encoding
 
-  def initialize(name='', type='', category='', country='', q='')
+  def initialize(name='', type='', category='', country='', q='', encoding = false)
     @name = name
     @type = type
     @category = category
@@ -14,6 +14,7 @@ class News
     @start_date = start_date
     @end_date = end_date
     @url = url
+    @encoding = encoding
   end
 
   def url
@@ -62,9 +63,16 @@ class News
   def save
     req = open(url)
     response_body = req.read
-    encoded = response_body.encode(Encoding.find('ASCII'), encoding_options)
-    File.open("_data/#{name}.json", "w") do |f|
-      f.write encoded
+
+    if @encoding 
+      encoded = response_body.encode(Encoding.find('ASCII'), encoding_options)
+      File.open("_data/#{name}.json", "w") do |f|
+        f.write encoded
+      end
+    else
+      File.open("_data/#{name}.json", "w") do |f|
+        f.write response_body
+      end
     end
   end
 
@@ -88,5 +96,5 @@ english.save
 ap = News.new("ap", "everything", "", "", "プログラミング")
 ap.save
 
-js = News.new("js", "everything", "", "", "Vue.js")
+js = News.new("js", "everything", "", "", "Vue.js", true)
 js.save
