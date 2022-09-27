@@ -90,7 +90,7 @@ end
 technology = News.new("technology", "top-headlines", "technology", "jp")
 technology.save
 
-english = News.new("english", "everything", "", "", "english")
+english = News.new("english", "everything", "", "", "english", true)
 english.save
 
 ap = News.new("ap", "everything", "", "", "プログラミング")
