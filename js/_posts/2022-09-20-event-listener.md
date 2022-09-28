@@ -37,7 +37,30 @@ description: イベントリスナーとは、イベントにアクションを�
 
 
 このように、ボタンをクリックすると数字が変化します.  
-![](/images/js/2022-09-20-event-listener/el_image1.png)
+
+  <div>
+    <button id="plus">+</button>
+    <span id="number">0</span>
+    <button id="minus">-</button>
+  </div>
+
+  <script>
+    let count = 0;
+
+    const number = document.querySelector("#number");
+    const plusBtn = document.querySelector("#plus");
+    const minusBtn = document.querySelector("#minus");
+
+    plusBtn.addEventListener("click", (e) => {
+      count++;
+      number.textContent = count;
+    })
+
+    minusBtn.addEventListener("click", (e) => {
+      count--;
+      number.textContent = count;
+    })
+  </script>
 
 
 ## onclick
