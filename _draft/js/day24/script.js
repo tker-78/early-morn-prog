@@ -60,11 +60,6 @@ document.addEventListener('DOMContentLoaded', function (){
     weight.style.color = 'white';
 
 
- 
-
-
-
-
   })
 })
 
