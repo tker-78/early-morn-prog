@@ -7,28 +7,33 @@ document.addEventListener('DOMContentLoaded', function (){
 
     const planetImage = document.querySelector("img")
 
+  
+    const image_location = location.href.replace('index.html', '') + 'images'
+
+
+    console.log(image_location)
 
     switch (selectedPlanet.value) {
       case 'mercury' :
-        planetImage.src = `${location}images/${selectedPlanet.value}.png`
+        planetImage.src = `${image_location}/${selectedPlanet.value}.png`
       case 'venus' :
-        planetImage.src = `${location}images/${selectedPlanet.value}.png`
+        planetImage.src = `${image_location}/${selectedPlanet.value}.png`
       case 'earth' :
-        planetImage.src = `${location}images/${selectedPlanet.value}.png`
+        planetImage.src = `${image_location}/${selectedPlanet.value}.png`
       case 'moon' :
-        planetImage.src = `${location}images/${selectedPlanet.value}.png`
+        planetImage.src = `${image_location}/${selectedPlanet.value}.png`
       case 'mars' :
-        planetImage.src = `${location}images/${selectedPlanet.value}.png`
+        planetImage.src = `${image_location}/${selectedPlanet.value}.png`
       case 'jupiter' :
-        planetImage.src = `${location}images/${selectedPlanet.value}.png`
+        planetImage.src = `${image_location}/${selectedPlanet.value}.png`
       case 'saturn' :
-        planetImage.src = `${location}images/${selectedPlanet.value}.png`
+        planetImage.src = `${image_location}/${selectedPlanet.value}.png`
       case 'uranus' :
-        planetImage.src = `${location}images/${selectedPlanet.value}.png`
+        planetImage.src = `${image_location}/${selectedPlanet.value}.png`
       case 'neptune' :
-        planetImage.src = `${location}images/${selectedPlanet.value}.png`
+        planetImage.src = `${image_location}/${selectedPlanet.value}.png`
       case 'pluto' :
-        planetImage.src = `${location}images/${selectedPlanet.value}.png`
+        planetImage.src = `${image_location}/${selectedPlanet.value}.png`
     }
 
     const desc = document.querySelector(".description strong")
@@ -45,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function (){
         'saturn': 6,
         'uranus': 3,
         'neptune': 0.8,
-        'plute': 15
+        'pluto': 15
       }
       return  gravities[planet] * mass
     }
