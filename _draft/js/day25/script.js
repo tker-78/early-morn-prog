@@ -14,6 +14,7 @@
       labels: ['a', 'b', 'c'],
       datasets: [
         {
+          axes: 'y', 
           label: 'label',
           data: [2,2,3,],
           borderColor: [
