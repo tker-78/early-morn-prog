@@ -1,76 +1,103 @@
-const url = 'https://restcountries.com/v2/all'
+url = "https://restcountries.com/v2/all"
+
+var countries = []
 
 fetch(url)
 .then(response => response.json())
 .then(data => {
-  
-  let pop_sorted = data.sort((a,b) => b.population - a.population )
-  console.log(pop_sorted)
 
-  let population_array = []
-  for(let i = 0; i < 10; i++) {
-    population_array.push(pop_sorted[i])
+  //人口グラフ用データの作成
+  let pop_nums = []
+  let country_name = []
+
+  let sorted_pop = data.sort((a, b) =>  b.population - a.population)
+
+  for(let i =0; i < 10; i++) {
+    pop_nums.push(sorted_pop[i].population)
   }
 
-  population_array.forEach(country => console.log(country.name))
+  for(let i = 0; i < 10; i++) {
+    country_name.push(sorted_pop[i].name)
+  }
 
-  let pop_labels = []
+  // 言語グラフ用データの作成
 
-  population_array.forEach(country => pop_labels.push(country.name))
+  let lang_data = {
+    countries: [],
+    lang: []
+  }
 
-  let pop_nums = []
+  console.log(data)
+  data.forEach(country => {
+    lang_data.countries.push(country.languages[0].name)
+  })
 
-  population_array.forEach(country => pop_nums.push(country.population))
-
-  console.log(pop_labels)
-  console.log(pop_nums)
+  console.log(lang_data.countries)
 
 
+  let count = lang_data.countries.filter(n => n === 'English').length;
+  console.log(count)
 
-  const ctx = document.getElementById("myChart")
 
-  const myChart = new Chart(ctx, {
+
+
+
+  // グラフの定義
+  const population_chart = {
     type: 'bar',
     data: {
-      labels: pop_labels,
-      datasets: [
-        {
-          axes: 'y', 
-          label: 'label',
-          data: pop_nums,
-          borderColor: [
-            'rgba(0, 0, 255, 1)',
-            'rgba(0, 0, 255, 1)',
-            'rgba(0, 0, 255, 1)',
-          ], 
-          backgroundColor: [
-            'rgba(0, 0, 255, 1)',
-            'rgba(0, 0, 255, 1)',
-            'rgba(0, 0, 255, 1)',
-          ],
-        },
-        {
-          label: 'label2', 
-          data: [2,3,6]
-        }
-      ]
+      labels: country_name,
+      datasets: [{
+        label: 'label1',
+        data: pop_nums,
+      }],
     },
     options: {
-      indexAxis: 'y',
       scales: {
         yAxes: [{
           display: true,
           ticks: {
-            // beginAtZero: true
-            suggestedMin: 0,
             suggestedMax: 10,
+            suggestedMin: 0
           }
         }]
       }
     }
-  })
+  }
+
+  const language_chart = {
+    type: 'bar',
+    data: {
+      labels: ['d', 'e', 'f'],
+      datasets: [{
+        label: 'label1',
+        data: [5,8,9],
+      }],
+    },
+    options: {
+      scales: {
+        yAxes: [{
+          display: true,
+          ticks: {
+            suggestedMax: 10,
+            suggestedMin: 0
+          }
+        }]
+      }
+    }
+  }
+
+      const ctx = document.querySelector("#myChart")
+
+    document.querySelector("#population").addEventListener('click', function(){
+      const myChart = new Chart(ctx, population_chart)
+
+    })
+
+    document.querySelector("#language").addEventListener('click', function(){
+      const myChart = new Chart(ctx, language_chart)
+    })
 
 
-
-  
 })
+
