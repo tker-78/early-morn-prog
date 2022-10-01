@@ -1,22 +1,43 @@
-// const url = 'https://restcountries.com/v2/all'
+const url = 'https://restcountries.com/v2/all'
 
-// fetch(url)
-// .then(response => response.json())
-// .then(data => {
-//   pop_sorted = data.sort((a,b) => b.population - a.population )
-// })
+fetch(url)
+.then(response => response.json())
+.then(data => {
+  
+  let pop_sorted = data.sort((a,b) => b.population - a.population )
+  console.log(pop_sorted)
+
+  let population_array = []
+  for(let i = 0; i < 10; i++) {
+    population_array.push(pop_sorted[i])
+  }
+
+  population_array.forEach(country => console.log(country.name))
+
+  let pop_labels = []
+
+  population_array.forEach(country => pop_labels.push(country.name))
+
+  let pop_nums = []
+
+  population_array.forEach(country => pop_nums.push(country.population))
+
+  console.log(pop_labels)
+  console.log(pop_nums)
+
+
 
   const ctx = document.getElementById("myChart")
 
   const myChart = new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: ['a', 'b', 'c'],
+      labels: pop_labels,
       datasets: [
         {
           axes: 'y', 
           label: 'label',
-          data: [2,2,3,],
+          data: pop_nums,
           borderColor: [
             'rgba(0, 0, 255, 1)',
             'rgba(0, 0, 255, 1)',
@@ -50,42 +71,6 @@
   })
 
 
-// const ctx = document.getElementById("myChart");
-//   const myChart = new Chart(ctx, {
-//     type: 'line',
-//     data: {
-//       labels: ['8月1日', '8月2日', '8月3日', '8月4日', '8月5日', '8月6日', '8月7日'],
-//       datasets: [
-//         {
-//           label: '最高気温(度）',
-//           data: [35, 34, 37, 35, 34, 35, 34, 25],
-//           borderColor: "rgba(255,0,0,1)",
-//           backgroundColor: "rgba(0,0,0,0)"
-//         },
-//         {
-//           label: '最低気温(度）',
-//           data: [25, 27, 27, 25, 26, 27, 25, 21],
-//           borderColor: "rgba(0,0,255,1)",
-//           backgroundColor: "rgba(0,0,0,0)"
-//         }
-//       ],
-//     },
-//     options: {
-//       title: {
-//         display: true,
-//         text: '気温（8月1日~8月7日）'
-//       },
-//       scales: {
-//         yAxes: [{
-//           ticks: {
-//             suggestedMax: 40,
-//             suggestedMin: 0,
-//             stepSize: 10,
-//             callback: function(value, index, values){
-//               return  value +  '度'
-//             }
-//           }
-//         }]
-//       },
-//     }
-//   });
+
+  
+})
