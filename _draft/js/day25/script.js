@@ -51,10 +51,31 @@ fetch(url)
     return [e, lang_data.counts.count[i]]
   })
 
-
+  function uniq(arr) {
+    const new_arr = arr.filter(i => {
+      if (!this[i[0]]) {
+        return this[i[0]] = true
+      }
+    })
+    return new_arr
+  }
 
   console.log(zipped)
 
+  let uniq_arr = uniq(zipped)
+
+  let sorted = uniq_arr.sort((a,b) => b[1] - a[1])
+  console.log(sorted)
+
+  let lang_country = []
+  let lang_nums = []
+
+  sorted.forEach((a) => {
+    lang_country.push(a[0])
+    lang_nums.push(a[1])
+  })
+
+  console.log(lang_country)
 
 
   // グラフの定義
@@ -83,10 +104,10 @@ fetch(url)
   const language_chart = {
     type: 'bar',
     data: {
-      labels: lang_data.counts.lang,
+      labels: lang_country.slice(0,10),
       datasets: [{
         label: 'label1',
-        data: lang_data.counts.count,
+        data: lang_nums.slice(0,10),
       }],
     },
     options: {
