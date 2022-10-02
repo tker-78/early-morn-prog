@@ -6,6 +6,9 @@ fetch(url)
 .then(response => response.json())
 .then(data => {
 
+  const strong = document.querySelector('strong')
+  strong.textContent = data.length
+
   //人口グラフ用データの作成
   let pop_nums = []
   let country_name = []
