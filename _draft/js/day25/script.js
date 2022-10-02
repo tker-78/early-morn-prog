@@ -24,19 +24,43 @@ fetch(url)
 
   let lang_data = {
     countries: [],
-    lang: []
+    counts: {
+      lang: [],
+      count: []
+    }
   }
 
-  console.log(data)
   data.forEach(country => {
     lang_data.countries.push(country.languages[0].name)
   })
 
-  console.log(lang_data.countries)
 
 
-  let count = lang_data.countries.filter(n => n === 'English').length;
-  console.log(count)
+
+  lang_data.countries.forEach(country => {
+    let count = 0
+    let self_country = country
+      count = lang_data.countries.filter(n => n === self_country).length
+      lang_data.counts.lang.push(self_country)
+      lang_data.counts.count.push(count)
+  })
+
+  console.log(lang_data.counts.lang, lang_data.counts.count)
+
+  let zipped = lang_data.counts.lang.map(function(e,i) {
+    return [e, lang_data.counts.count[i]]
+  })
+
+  function uniq(array) {
+    return Array.from(new Set(array))
+  }
+
+  console.log(zipped)
+  console.log(uniq(zipped))
+
+  console.log([...new Set(zipped)])
+
+
 
 
 
@@ -68,10 +92,10 @@ fetch(url)
   const language_chart = {
     type: 'bar',
     data: {
-      labels: ['d', 'e', 'f'],
+      labels: lang_data.counts.lang,
       datasets: [{
         label: 'label1',
-        data: [5,8,9],
+        data: lang_data.counts.count,
       }],
     },
     options: {
