@@ -51,18 +51,9 @@ fetch(url)
     return [e, lang_data.counts.count[i]]
   })
 
-  function uniq(array) {
-    return Array.from(new Set(array))
-  }
+
 
   console.log(zipped)
-  console.log(uniq(zipped))
-
-  console.log([...new Set(zipped)])
-
-
-
-
 
 
 
