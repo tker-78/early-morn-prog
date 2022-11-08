@@ -96,5 +96,5 @@ english.save
 ap = News.new("ap", "everything", "", "", "プログラミング")
 ap.save
 
-js = News.new("js", "everything", "", "", "Vue.js", true)
+js = News.new("js", "everything", "", "", "Rails", true)
 js.save
