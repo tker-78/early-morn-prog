@@ -69,7 +69,7 @@
           <article class="profile-menu" id="menu">
             <nav class="menu-navigation">
               <ul class="menu-navigation-list">
-                <li class="menu-navigation-list-item"><a href="#githubpages">GitHubPages</a></li>
+                <li class="menu-navigation-list-item"><a href="#jekyll">Jekyll</a></li>
                 <li class="menu-navigation-list-item"><a href="#english">English</a></li>
                 <li class="menu-navigation-list-item"><a href="#ap">応用情報技術者試験</a></li>
                 <li class="menu-navigation-list-item"><a href="#sql">SQL</a></li>
@@ -78,14 +78,14 @@
             </nav>
 
 
-            <div id="githubpages" class="menu-category">
-              <h3 class="menu-category-name">GitHub Pages</h3>
+            <div id="jekyll" class="menu-category">
+              <h3 class="menu-category-name">Jekyll</h3>
               <p>Jekyllを使ってオリジナルのブログを作り上げる. </p>
               <ol class="menu-category-list has-images">
 
 
               <!-- 6記事のみを表示する  -->
-              {% assign cat = "githubpages" %}
+              {% assign cat = "Jekyll" %}
               {% for post in site.categories[cat] limit:6 %} 
                 {% include display_posts.html %}
               {% endfor %}
