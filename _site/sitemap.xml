@@ -270,6 +270,9 @@
 <loc>http://localhost:4000/sql</loc>
 </url>
 <url>
+<loc>http://localhost:4000/vue</loc>
+</url>
+<url>
 <loc>http://localhost:4000/</loc>
 </url>
 <url>

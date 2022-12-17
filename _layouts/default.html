@@ -74,6 +74,7 @@
                 <li class="menu-navigation-list-item"><a href="#ap">応用情報技術者試験</a></li>
                 <li class="menu-navigation-list-item"><a href="#sql">SQL</a></li>
                 <li class="menu-navigation-list-item"><a href="#js">Javascriptの基本</a></li>
+                <li class="menu-navigation-list-item"><a href="#vue">Vue.js</a></li>
               </ul>
             </nav>
 
@@ -167,6 +168,25 @@
                 {% endif %}
               </div>
             </div>  
+
+            <div id="vue" class="menu-category">
+              <h3 class="menu-category-name">Vue.js</h3>
+              <p>Vue.js</p>
+              <ol class="menu-category-list has-images">
+
+              {% assign cat = "vue" %}
+              {% for post in site.categories[cat] limit: 6%} 
+                {% include display_posts.html %}
+              {% endfor %}
+              </ol>
+
+              <div class="show-more">
+                {% if site.categories[cat].size > 6 %}
+                  <a href="/{{ cat }}" class="btn btn-info btn-sm" style="max-width: 45%;"> Show More </a>
+                {% endif %}
+              </div>
+            </div>     
+
           </article>
 
 
