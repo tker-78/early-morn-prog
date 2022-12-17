@@ -3046,7 +3046,9 @@ screen and (min-width:64em) and (max-height:68.6875em) {
   }
 
   .menu-navigation-list {
-    width: 75%
+    width: 75%;
+    display: flex;
+    justify-content: left;
   }
 
   .menu-category:first-of-type:only-child:before {
